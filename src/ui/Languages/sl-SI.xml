@@ -107,11 +107,11 @@ Lahko ga brezplačno razdeljujete, spreminjate in uporabljate.
 
 Izvorna koda C# je dostopna na https://github.com/SubtitleEdit/subtitleedit
 
-Za najnovejšo različico obiščite https://www.nikse.dk.
+Za najnovejšo različico obiščite https://www.iranexpedia.
 
 Predlogi so zelo dobrodošli.
 
-Elektronska pošta: mailto:nikse.dk@gmail.com</AboutText1>
+Elektronska pošta: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Dodaj na seznam imen</Title>
@@ -1608,7 +1608,7 @@ Ali želite začeti z vrha dokumenta ter nadaljevati iskanje in zamenjavo?</Repl
     <SubtitleTranslated>Podnapisi so prevedeni</SubtitleTranslated>
     <TranslateSwedishToDanish>Prevedi trenutno naložene švedske podnapise v danščino</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Prevedi trenutno naložen ŠVEDSKI (ali ste prepričani, da je švedski?) podnapis v danščino?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Prevajanje prek www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Prevajanje prek www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Pred prevodom iz švedščine v danščino</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Prevod iz švedščine v danščino je končan</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Prevod iz švedščine v danščino ni uspel</TranslationFromSwedishToDanishFailed>

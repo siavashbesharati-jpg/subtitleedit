@@ -110,7 +110,7 @@
   </General>
   <About>
     <Title>O programu Subtitle Edit</Title>
-    <AboutText1>Subtitle Edit je svobodný software pod obecnou veřejnou licencí GNU. Můžete jej volně šířit, měnit a používat. Zdrojový kód C# je dostupný na https://github.com/SubtitleEdit/subtitleedit Pro nejnovější verzi navštivte https://www.nikse.dk. Připomínky jsou vítány. E-mail: mailto:nikse.dk@gmail.com</AboutText1>
+    <AboutText1>Subtitle Edit je svobodný software pod obecnou veřejnou licencí GNU. Můžete jej volně šířit, měnit a používat. Zdrojový kód C# je dostupný na https://github.com/SubtitleEdit/subtitleedit Pro nejnovější verzi navštivte https://www.iranexpedia. Připomínky jsou vítány. E-mail: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Přidat na seznam jmen</Title>
@@ -1742,7 +1742,7 @@
     <SubtitleTranslated>Titulek přeložen</SubtitleTranslated>
     <TranslateSwedishToDanish>Přeložit aktuálně načtené švédské titulky do dánštiny</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Přeložit aktuálně načtené ŠVÉDSKÉ (určitě se jedná o švédštinu?) titulky do dánštiny?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Překládání pomocí www.nikse.dk/mt…</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Překládání pomocí www.iranexpedia/mt…</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Před překladem ze švédštiny do dánštiny</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Překlad ze švédštiny do dánštiny dokončen</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Překlad ze švédštiny do dánštiny selhal</TranslationFromSwedishToDanishFailed>

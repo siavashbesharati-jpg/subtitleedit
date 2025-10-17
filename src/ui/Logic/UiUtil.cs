@@ -1309,7 +1309,7 @@ namespace Nikse.SubtitleEdit.Logic
             var helpFile = LanguageSettings.Current.General.HelpFile;
             if (string.IsNullOrEmpty(helpFile))
             {
-                helpFile = "https://www.nikse.dk/SubtitleEdit/Help";
+                helpFile = "https://www.iranexpedia/SubtitleEdit/Help";
             }
 
             try

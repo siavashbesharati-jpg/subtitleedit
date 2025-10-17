@@ -113,9 +113,9 @@
     <AboutText1>Subtitle Edit는 GNU 정책을 따르는 무료 소프트웨어입니다.
 자유롭게 배포할 수 있으며 수정해서 사용할 수 있습니다.
 C# 코드는 https://github.com/SubtitleEdit/subtitleedit 에 있습니다.
-최신 버전은 홈페이지(www.nikse.dk)를 방문하시기 바랍니다.
+최신 버전은 홈페이지(www.iranexpedia)를 방문하시기 바랍니다.
 귀하의 의견은 아래 이메일 주소로 접수되며 언제나 환영합니다.
-이메일 주소: mailto:nikse.dk@gmail.com</AboutText1>
+이메일 주소: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>이름 목록에 단어 추가</Title>
@@ -1780,7 +1780,7 @@ FFmpeg를 다운로드하고 사용하시겠습니까?</FfmpegNotFound>
     <TranslateSwedishToDanish>현재 로드된 스웨덴어 자막을 덴마크어로 번역</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>현재 로드된 자막이 스웨덴어가 확실합니까?
 스웨덴어가 맞으면 덴마크어로 번역될 것입니다.</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>www.nikse.dk/mt를 통해 번역하는 중...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>www.iranexpedia/mt를 통해 번역하는 중...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>스웨덴어를 덴마크어로 번역 전</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>스웨덴어를 덴마크어로 번역했습니다!</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>스웨덴어를 덴마크어로 번역하지 못했습니다!</TranslationFromSwedishToDanishFailed>

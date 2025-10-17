@@ -65,7 +65,7 @@ namespace Nikse.SubtitleEdit.Forms.Assa
             }
             else if (e.KeyData == UiUtil.HelpKeys)
             {
-                UiUtil.OpenUrl("https://www.nikse.dk/SubtitleEdit/AssaOverrideTags");
+                UiUtil.OpenUrl("https://www.iranexpedia/SubtitleEdit/AssaOverrideTags");
                 e.SuppressKeyPress = true;
             }
             else if (e.KeyData == Keys.Enter)

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * NOTE: Converted to C# and modified by Nikse.dk@gmail.com
+ * NOTE: Converted to C# and modified by iranexpedia@gmail.com
  * NOTE: For more info see http://blog.thescorpius.com/index.php/2017/07/15/presentation-graphic-stream-sup-files-bluray-subtitle-format/
  */
 

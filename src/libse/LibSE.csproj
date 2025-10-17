@@ -18,6 +18,7 @@
 		<PackageReleaseNotes>SE 4.0.13</PackageReleaseNotes>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 		<PackageReadmeFile>Readme.md</PackageReadmeFile>
+		<GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -51,6 +52,7 @@
 		<PackageReference Include="Microsoft.Win32.Registry" />
 		<PackageReference Include="System.Drawing.Common" />
 		<PackageReference Include="System.Net.Http" />
+		<PackageReference Include="System.Resources.Extensions" />
 		<PackageReference Include="UTF.Unknown" />
 		<PackageReference Include="zlib.net-mutliplatform" />
 	</ItemGroup>

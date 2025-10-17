@@ -115,11 +115,11 @@ U mag het verspreiden, wĳzigen en vrĳ gebruiken.
 
 C#-broncode is beschikbaar op https://github.com/SubtitleEdit/subtitleedit
 
-Bezoek www.nikse.dk voor de nieuwste versie.
+Bezoek www.iranexpedia voor de nieuwste versie.
 
 Suggesties zĳn van harte welkom.
 
-E-mail: mailto:nikse.dk@gmail.com</AboutText1>
+E-mail: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Aan namenlĳst toevoegen</Title>
@@ -1785,7 +1785,7 @@ Wilt u deze bewerking voortzetten?</SubtitleAppendPrompt>
     <SubtitleTranslated>Ondertitel vertaald</SubtitleTranslated>
     <TranslateSwedishToDanish>Momenteel geladen Zweedse ondertitel naar Deens vertalen</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Momenteel geladen Zwéédse ondertitel (weet u zeker dat het Zweeds is?) naar Deens vertalen?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Vertalen via www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Vertalen via www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Vóór het vertalen van Zweeds naar Deens</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Vertaling van Zweeds naar Deens voltooid</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Vertaling van Zweeds naar Deens mislukt</TranslationFromSwedishToDanishFailed>

@@ -118,10 +118,10 @@
 Исходный код программы на языке C# доступен по адресу:
 https://github.com/SubtitleEdit/subtitleedit
 
-Посетите сайт www.nikse.dk, чтобы получить последнюю версию и узнать новости.
+Посетите сайт www.iranexpedia, чтобы получить последнюю версию и узнать новости.
 Пожелания и предложения приветствуются.
 
-Адрес эл. почты: mailto:nikse.dk@gmail.com
+Адрес эл. почты: mailto:iranexpedia@gmail.com
 
 Русификация программ, помощь и обучение: www.wylek.ru</AboutText1>
   </About>
@@ -1794,7 +1794,7 @@ https://github.com/SubtitleEdit/subtitleedit
     <SubtitleTranslated>Субтитры переведены</SubtitleTranslated>
     <TranslateSwedishToDanish>Перевести загруженные субтитры со Шведского на Датский</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Перевести загруженные субтитры со ШВЕДСКОГО (Вы уверены, что это Шведский?) на Датский?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Перевести с помощью www.nikse.dk/mt…</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Перевести с помощью www.iranexpedia/mt…</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Перед переводом со Шведского на Датский</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Перевод со Шведского на Датский выполнен</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Ошибка при переводе со Шведского на Датский</TranslationFromSwedishToDanishFailed>

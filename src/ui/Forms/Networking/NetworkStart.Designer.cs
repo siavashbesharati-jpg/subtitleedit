@@ -97,7 +97,7 @@
             this.comboBoxWebServiceUrl.DropDownWidth = 262;
             this.comboBoxWebServiceUrl.FormattingEnabled = true;
             this.comboBoxWebServiceUrl.Items.AddRange(new object[] {
-            "https://www.nikse.dk/api/senet/"});
+            "https://www.iranexpedia/api/senet/"});
             this.comboBoxWebServiceUrl.Location = new System.Drawing.Point(125, 145);
             this.comboBoxWebServiceUrl.MaxLength = 32767;
             this.comboBoxWebServiceUrl.Name = "comboBoxWebServiceUrl";

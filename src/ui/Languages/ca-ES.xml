@@ -92,11 +92,11 @@ Podeu distribuir-lo, modificar-lo i emprar-lo lliurement.
 
 El codi C# està disponible en https://github.com/SubtitleEdit/subtitleedit
 
-Visiteu www.nikse.dk per l'última versió.
+Visiteu www.iranexpedia per l'última versió.
 
 Les suggerències són benvingudes.
 
-Email: mailto:nikse.dk@gmail.com</AboutText1>
+Email: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Afegeix a la llista de noms</Title>
@@ -1114,7 +1114,7 @@ Email: mailto:nikse.dk@gmail.com</AboutText1>
         <Title>Auto-traducció</Title>
         <TranslatePoweredByGoogle>Tradueix (Traductor Google)...</TranslatePoweredByGoogle>
         <TranslatePoweredByMicrosoft>Tradueix (Traductor Microsoft)...</TranslatePoweredByMicrosoft>
-        <TranslateFromSwedishToDanish>Tradueix des de SUEC a DANÉS (traductor de nikse.dk)...</TranslateFromSwedishToDanish>
+        <TranslateFromSwedishToDanish>Tradueix des de SUEC a DANÉS (traductor de iranexpedia)...</TranslateFromSwedishToDanish>
       </AutoTranslate>
       <Options>
         <Title>Opcions</Title>
@@ -1371,7 +1371,7 @@ Email: mailto:nikse.dk@gmail.com</AboutText1>
     <SubtitleTranslated>Subtítol traduït</SubtitleTranslated>
     <TranslateSwedishToDanish>Tradueix l'actual subtítol carregat SUEC al DANÉS</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Tradueix l'actual subtítol carregat SUEC (segur que és SUEC?) al DANÉS?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Traduïnt via www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Traduïnt via www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Abans traducció SUEC al DANÉS</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Traducció de SUEC al DANÉS completada</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Traducció de SUEC al DANÉS ha fallat</TranslationFromSwedishToDanishFailed>

@@ -118,7 +118,7 @@
 Программаның C# телендә чыганак коды монда бар:
 https://github.com/SubtitleEdit/subtitleedit 
 
-Соңгы юраманы йөкләү һәм яңалыклар өчен www.nikse.dk сәхифәсенә керегез.
+Соңгы юраманы йөкләү һәм яңалыклар өчен www.iranexpedia сәхифәсенә керегез.
 
 Теләкләрне һәм тәкъдимнәрне көтеп калам.
 
@@ -1744,7 +1744,7 @@ https://github.com/SubtitleEdit/subtitleedit
     <SubtitleTranslated>Асъязмалар тәрҗемә ителде</SubtitleTranslated>
     <TranslateSwedishToDanish>Йөкләнгән асъязмаларны Швед теленнән Дания теленә тәрҗемә ит</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Йөкләнгән асъязмаларны Швед теленнән (Бу чыннан да Швед телеме?) Дания теленә тәрҗемә итәргәме?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>www.nikse.dk/mt ярдәмендә тәрҗемә ит...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>www.iranexpedia/mt ярдәмендә тәрҗемә ит...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Швед теленнән Дания теленә тәрҗемә иткәнче</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Швед теленнән Дания теленә тәрҗемә ителде</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Швед теленнән Дания теленә тәрҗемә иткәндә хата</TranslationFromSwedishToDanishFailed>

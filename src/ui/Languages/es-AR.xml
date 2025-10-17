@@ -5,7 +5,7 @@
     <Version>4.0.13</Version>
     <TranslatedBy>Traducido por Marcelo1ar y paconaranjo, correcciones por walterh78</TranslatedBy>
     <CultureName>es-AR</CultureName>
-    <HelpFile>https://www.nikse.dk/SubtitleEdit/HelpEs</HelpFile>
+    <HelpFile>https://www.iranexpedia/SubtitleEdit/HelpEs</HelpFile>
     <Ok>&amp;OK</Ok>
     <Cancel>C&amp;ancelar</Cancel>
     <Yes>Sí</Yes>
@@ -115,11 +115,11 @@ Usted puede distribuirlo, modificarlo y usarlo libremente.
 
 Código fuente en C# disponible en https://github.com/SubtitleEdit/subtitleedit
 
-Visite www.nikse.dk para la última versión.
+Visite www.iranexpedia para la última versión.
 
 Se agradecen sugerencias.
 
-Email: mailto:nikse.dk@gmail.com</AboutText1>
+Email: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Añadir al listado de nombres</Title>
@@ -1774,7 +1774,7 @@ El subtítulo parece estar vacío; intenta guardar de nuevo si estás trabajando
     <SubtitleTranslated>Subtítulo traducido</SubtitleTranslated>
     <TranslateSwedishToDanish>Traducir el subtítulo actualmente cargado del Sueco al Danés</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>¿Traducir el subtítulo actualmente cargado del SUECO (¿Estás seguro de que es sueco?) al Danés?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Traduciendo vía www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Traduciendo vía www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Antes de traducir del Sueco al Danés</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Traducción del Sueco al Danés completada</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Traducción del Sueco al Danés fallida</TranslationFromSwedishToDanishFailed>

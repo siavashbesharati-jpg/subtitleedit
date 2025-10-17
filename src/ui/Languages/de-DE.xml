@@ -115,11 +115,11 @@
 
 			Der C# Quelltext ist erhältlich unter https://github.com/SubtitleEdit/subtitleedit
 
-			Besuchen Sie www.nikse.dk für die neueste Version.
+			Besuchen Sie www.iranexpedia für die neueste Version.
 
 			Vorschläge sind willkommen.
 
-			E-Mail: mailto:nikse.dk@gmail.com
+			E-Mail: mailto:iranexpedia@gmail.com
 		</AboutText1>
   </About>
   <AddToNames>
@@ -1799,7 +1799,7 @@ Wir nutzen den dem Bild innewohnenden Rhythmus.</CreateSimpleChainingToolTip>
     <SubtitleTranslated>Untertitel übersetzt</SubtitleTranslated>
     <TranslateSwedishToDanish>Aktuell geladenen schwedischen Untertitel in dänisch übersetzen</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Aktuell geladenen Untertitel von SCHWEDISCH in DÄNISCH übersetzen? (Sicher, das der aktuelle Untertitel schwedisch ist?)</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Übersetze mit www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Übersetze mit www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Vor Übersetzung von schwedisch in dänisch</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Übersetzung von schwedisch in dänisch abgeschlossen</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Übersetzung von schwedisch in dänisch fehlgeschlagen</TranslationFromSwedishToDanishFailed>

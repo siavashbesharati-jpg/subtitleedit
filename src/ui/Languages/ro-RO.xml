@@ -115,11 +115,11 @@ Poți să-l distribui, să-l modifici și să-l utilizezi gratis.
 
 Codul sursă C# este disponibil pe https://github.com/SubtitleEdit/subtitleedit.
 
-Vizitează www.nikse.dk pentru cea mai recentă versiune.
+Vizitează www.iranexpedia pentru cea mai recentă versiune.
 
 Orice sugestii sunt binevenite.
 
- Email la: nikse.dk @gmail.com</AboutText1>
+ Email la: iranexpedia @gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Adăugarea la lista de nume</Title>
@@ -1774,7 +1774,7 @@ Continui?</SubtitleAppendPrompt>
     <SubtitleTranslated>Subtitrare tradusă</SubtitleTranslated>
     <TranslateSwedishToDanish>Traducere în daneză a subtitrării suedeze încărcate</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Traduci în daneză subtitrarea suedeză (sigur e suedeză?)?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Traducere de la www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Traducere de la www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Înaintea traducerii din suedeză în daneză</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Traducerea completă din suedeză în daneză</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Traducere eșuată din suedeză în daneză</TranslationFromSwedishToDanishFailed>

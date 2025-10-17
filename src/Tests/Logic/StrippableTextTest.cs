@@ -119,25 +119,25 @@ namespace Tests.Logic
         [TestMethod]
         public void StrippableTextChangeCasing()
         {
-            var st = new StrippableText("this is for www.nikse.dk. thank you.");
+            var st = new StrippableText("this is for www.iranexpedia. thank you.");
             st.FixCasing(new List<string>(), false, true, true, "Bye.");
-            Assert.AreEqual("This is for www.nikse.dk. Thank you.", st.MergedString);
+            Assert.AreEqual("This is for www.iranexpedia. Thank you.", st.MergedString);
         }
 
         [TestMethod]
         public void StrippableTextChangeCasing2()
         {
-            var st = new StrippableText("this is for www.nikse.dk! thank you.");
+            var st = new StrippableText("this is for www.iranexpedia! thank you.");
             st.FixCasing(new List<string>(), false, true, true, "Bye.");
-            Assert.AreEqual("This is for www.nikse.dk! Thank you.", st.MergedString);
+            Assert.AreEqual("This is for www.iranexpedia! Thank you.", st.MergedString);
         }
 
         [TestMethod]
         public void StrippableTextChangeCasing3()
         {
-            var st = new StrippableText("www.nikse.dk");
+            var st = new StrippableText("www.iranexpedia");
             st.FixCasing(new List<string>(), false, true, true, "Bye.");
-            Assert.AreEqual("www.nikse.dk", st.MergedString);
+            Assert.AreEqual("www.iranexpedia", st.MergedString);
         }
 
         [TestMethod]

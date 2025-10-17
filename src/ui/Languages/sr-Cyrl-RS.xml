@@ -67,11 +67,11 @@
 расподељивати, мењати и користити како год ви желите.
 
 Изворни кôд, као и најновије издање програма
-налазе се на интернет адреси www.nikse.dk.
+налазе се на интернет адреси www.iranexpedia.
 
 Сваки предлог је добродошао.
 
-Е-адреса: mailto:nikse.dk@gmail.com</AboutText1>
+Е-адреса: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Додавање речи у списак назива/изузетака</Title>
@@ -842,7 +842,7 @@
     <SubtitleTranslated>Титл је преведен.</SubtitleTranslated>
     <TranslateSwedishToDanish>Преведи учитан шведски титл у дански</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Превести учитани шведски титл у дански?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Преводим преко www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Преводим преко www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Преведено из шведског у дански</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Титл је преведен са шведског у дански.</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Не могу да преведем титл са шведског у дански.</TranslationFromSwedishToDanishFailed>

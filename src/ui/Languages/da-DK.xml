@@ -3,7 +3,7 @@
   <General>
     <Title>Subtitle Edit</Title>
     <Version>4.0.13</Version>
-    <TranslatedBy>Oversat til dansk af Nikse (mailto:nikse.dk@gmail.com)</TranslatedBy>
+    <TranslatedBy>Oversat til dansk af Nikse (mailto:iranexpedia@gmail.com)</TranslatedBy>
     <CultureName>da-DK</CultureName>
     <HelpFile />
     <Ok>&amp;OK</Ok>
@@ -115,11 +115,11 @@ Du kan distribuere, ændre og bruge det frit.
 
 C# source code er tilgængelig her: https://github.com/SubtitleEdit/subtitleedit/
 
-Besøg www.nikse.dk for den nyeste version.
+Besøg www.iranexpedia for den nyeste version.
 
 Forslag er meget velkomne.
 
-E-mail: mailto:nikse.dk@gmail.com</AboutText1>
+E-mail: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Tilføj til navne mv. liste</Title>
@@ -1781,7 +1781,7 @@ Fortsæt?</SubtitleAppendPrompt>
     <SubtitleTranslated>Undertekst oversat</SubtitleTranslated>
     <TranslateSwedishToDanish>Oversæt aktuelle svenske undertekst til dansk</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Oversæt aktuelle indlæste svenske (er du sikker på det er svensk?) undertekst til dansk?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Omsætning via www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Omsætning via www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Før svensk til dansk oversættelse</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Oversættelse fra svensk til dansk komplet</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Oversættelse fra svensk til dansk mislykkedes</TranslationFromSwedishToDanishFailed>

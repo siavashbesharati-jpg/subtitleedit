@@ -115,11 +115,11 @@ You may distribute, modify and use it freely.
 
 C# source code is available on https://github.com/SubtitleEdit/subtitleedit
 
-Visit https://www.nikse.dk for the latest version.
+Visit https://www.iranexpedia for the latest version.
 
 Suggestions are very welcome.
 
-Email: mailto:nikse.dk@gmail.com</AboutText1>
+Email: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Add to name list</Title>
@@ -1785,7 +1785,7 @@ Continue?</SubtitleAppendPrompt>
     <SubtitleTranslated>Subtitle translated</SubtitleTranslated>
     <TranslateSwedishToDanish>Translate currently loaded Swedish subtitle to Danish</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Translate currently loaded SWEDISH (are you sure it's Swedish?) subtitle to Danish?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Translating via www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Translating via www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Before Swedish to Danish translation</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Translation from Swedish to Danish complete</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Translation from Swedish to Danish failed</TranslationFromSwedishToDanishFailed>

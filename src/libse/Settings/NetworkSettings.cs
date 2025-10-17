@@ -14,7 +14,7 @@ namespace Nikse.SubtitleEdit.Core.Settings
         {
             UserName = string.Empty;
             SessionKey = Guid.NewGuid().ToString();
-            WebApiUrl = "https://www.nikse.dk/api/SeNet";
+            WebApiUrl = "https://www.iranexpedia/api/SeNet";
             PollIntervalSeconds = 5;
         }
     }

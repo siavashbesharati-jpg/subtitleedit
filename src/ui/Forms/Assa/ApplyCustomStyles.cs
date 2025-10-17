@@ -132,7 +132,7 @@ namespace Nikse.SubtitleEdit.Forms.Assa
                     return;
                 }
 
-                UiUtil.OpenUrl("https://www.nikse.dk/SubtitleEdit/AssaOverrideTags");
+                UiUtil.OpenUrl("https://www.iranexpedia/SubtitleEdit/AssaOverrideTags");
                 e.SuppressKeyPress = true;
             }
             else if (MainTextBoxAssaIntellisense == e.KeyData)

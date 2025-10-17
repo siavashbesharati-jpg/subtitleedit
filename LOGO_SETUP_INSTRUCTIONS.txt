@@ -1,0 +1,29 @@
+# Instructions to Complete CaptionFlow Logo Setup
+
+## STEP 1: Save Your Logo Image
+1. **Right-click** on the CaptionFlow logo image you provided
+2. **Save the image** to this folder: `E:\IRANEXPEDIA\Subedit\subtitleedit\`
+3. **Rename the file** to exactly: `captionflow_logo.png`
+
+## STEP 2: Run the Setup Script
+1. **Double-click** on `SetupCaptionFlow.bat` in this folder
+2. The script will automatically:
+   - Convert your PNG to ICO format
+   - Replace all icon files
+   - Build the application
+   - Launch CaptionFlow with your logo
+
+## Alternative Manual Steps:
+If the batch file doesn't work:
+
+1. **Save your logo as**: `captionflow_logo.png` in this directory
+2. **Open PowerShell** in this directory
+3. **Run**: `.\SetupCaptionFlow.bat`
+
+## What You'll See:
+- Window title: "Untitled - CaptionFlow 4.0.13"
+- Your custom logo in the window title bar
+- Your logo in the Windows taskbar
+- About dialog showing "About CaptionFlow"
+
+The logo image you provided looks perfect for this! It's a clean, professional design that will look great as the application icon.

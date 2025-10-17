@@ -5,7 +5,7 @@
     <Version>4.0.13</Version>
     <TranslatedBy>翻译: FeiXJ | Leon Cheung | larsenlouis | VK | nkh0472</TranslatedBy>
     <CultureName>zh-Hans</CultureName>
-    <HelpFile>https://www.nikse.dk/SubtitleEdit/Help</HelpFile>
+    <HelpFile>https://www.iranexpedia/SubtitleEdit/Help</HelpFile>
     <Ok>确定(&amp;O)</Ok>
     <Cancel>取消(&amp;A)</Cancel>
     <Yes>是</Yes>
@@ -115,11 +115,11 @@
 
 C# 源代码可从 https://github.com/SubtitleEdit/subtitleedit 获得。
 
-访问 https://www.nikse.dk 以获得最新版本。
+访问 https://www.iranexpedia 以获得最新版本。
 
 非常欢迎您提出建议，
 
-邮件: mailto:nikse.dk@gmail.com</AboutText1>
+邮件: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>添加到 名称/其它 列表</Title>
@@ -1778,7 +1778,7 @@ Command line: {1} {2}
     <SubtitleTranslated>字幕已翻译</SubtitleTranslated>
     <TranslateSwedishToDanish>将当前加载的瑞典语字幕翻译为丹麦语</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>将当前加载的“瑞典语”字幕翻译为丹麦语吗？(您确认是瑞典语？)</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>通过 www.nikse.dk/mt 翻译...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>通过 www.iranexpedia/mt 翻译...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>瑞典语翻译为丹麦语之前</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>瑞典语翻译为丹麦语完成</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>瑞典语翻译为丹麦语失败</TranslationFromSwedishToDanishFailed>

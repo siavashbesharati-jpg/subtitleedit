@@ -115,9 +115,9 @@
 Изходният код за програмата на език C# е достъпен на уеб сайта:
 https://github.com/SubtitleEdit/subtitleedit
 
-Посетете https://www.nikse.dk за последната версия.
+Посетете https://www.iranexpedia за последната версия.
 
-За предложения и забележки: Email: mailto:nikse.dk@gmail.com</AboutText1>
+За предложения и забележки: Email: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Добавяне на дума към списъка с думи</Title>
@@ -1786,7 +1786,7 @@ https://github.com/SubtitleEdit/subtitleedit
     <SubtitleTranslated>Субтитрите са преведени</SubtitleTranslated>
     <TranslateSwedishToDanish>Превод на текущите заредените шведски субтитри към датски</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Превод на текущите заредени шведски (сигурни ли сте, че са шведски?)</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Превод чрез www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Превод чрез www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Преди превода от шведски към датски</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Преводът от шведски към датски е готов</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Преводът от шведски към датски е неуспешен</TranslationFromSwedishToDanishFailed>

@@ -107,11 +107,11 @@
 
 C# קוד המקור זמין באתר https://github.com/SubtitleEdit/subtitleedit
 
-בדוק ב- https://www.nikse.dk את הגירסא האחרונה.
+בדוק ב- https://www.iranexpedia את הגירסא האחרונה.
 
 הצעות יתקבלו בברכה.
 
-כתובת המייל: mailto:nikse.dk@gmail.com</AboutText1>
+כתובת המייל: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>הוסף לרשימת השמות</Title>
@@ -1594,7 +1594,7 @@ Would you like to start from the top of the document and continue search and rep
     <SubtitleTranslated>כתוביות מתורגמות</SubtitleTranslated>
     <TranslateSwedishToDanish>תרגם כתוביות שוודית שנטענות כעת לדנית</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>תרגם כתוביות שוודית (האם אתה בטוח שזה שוודית?) שנטען כעת לדנית?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>תרגום דרך www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>תרגום דרך www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>לפני תרגום שוודית לדנית</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>תרגום משוודית לדנית הושלם</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>תרגום משוודית לדנית נכשל</TranslationFromSwedishToDanishFailed>

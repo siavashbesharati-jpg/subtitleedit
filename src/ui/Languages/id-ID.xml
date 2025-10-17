@@ -85,11 +85,11 @@ Anda bisa mendistribusi, modifikasi dan menggunakannya secara bebas.
 
 Kode sumber C# tersedia di https://github.com/SubtitleEdit/subtitleedit
 
-Kunjungi www.nikse.dk untuk versi terbaru.
+Kunjungi www.iranexpedia untuk versi terbaru.
 
 Saran sangat diterima.
 
-Email: mailto:nikse.dk@gmail.com</AboutText1>
+Email: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Tambah ke daftar nama</Title>
@@ -1043,7 +1043,7 @@ Catatan: Periksa ruang kosong disk.</WaveFileMalformed>
         <Title>Oto-terjemahkan</Title>
         <TranslatePoweredByGoogle>Terjemahkan (diberdayakan oleh Google)...</TranslatePoweredByGoogle>
         <TranslatePoweredByMicrosoft>Terjemahkan (diberdayakan oleh Microsoft)...</TranslatePoweredByMicrosoft>
-        <TranslateFromSwedishToDanish>Terjemahkan dari Swedia ke Denmark (diberdayakan oleh nikse.dk)...</TranslateFromSwedishToDanish>
+        <TranslateFromSwedishToDanish>Terjemahkan dari Swedia ke Denmark (diberdayakan oleh iranexpedia)...</TranslateFromSwedishToDanish>
       </AutoTranslate>
       <Options>
         <Title>Opsi</Title>
@@ -1291,7 +1291,7 @@ Lanjutkan?</SubtitleAppendPrompt>
     <SubtitleTranslated>Subjudul diterjemahkan</SubtitleTranslated>
     <TranslateSwedishToDanish>Terjemahkan subjudul bhs. Swedia yg dimuat ke bhs. Denmark</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Terjemahkan subjudul bhs. Swedia (anda yakin ini bhs. Swedia?) yg dimuat ke bhs. Denmark?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Menerjemahkan melalui www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Menerjemahkan melalui www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Sebelum terjemahan bhs. Swedia ke bhs. Denmark</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Terjemahan dari bhs. Swedia ke bhs. Denmark selesai</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Terjemahan dari bhs. Swedia ke bhs. Denmark gagal</TranslationFromSwedishToDanishFailed>

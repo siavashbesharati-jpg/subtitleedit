@@ -116,11 +116,11 @@ GNU Public License. Ви можете вільно поширювати, ред�
 
 Сирцевий код на C# доступний тут https://github.com/SubtitleEdit/subtitleedit
 
-Відвідайте www.nikse.dk, щоб отримати останню версію.
+Відвідайте www.iranexpedia, щоб отримати останню версію.
 
 Пропозиції дуже радо вітаються.
 
-Email: mailto:nikse.dk@gmail.com</AboutText1>
+Email: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Додати до списку імен</Title>
@@ -1786,7 +1786,7 @@ Email: mailto:nikse.dk@gmail.com</AboutText1>
     <SubtitleTranslated>Субтитри перекладено</SubtitleTranslated>
     <TranslateSwedishToDanish>Перекласти відкриті зараз шведські субтитри на данську</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Перекласти відкриті зараз ШВЕДСЬКІ (ви впевнені, що вони - шведські?) субтитри на данську?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Перекладаємо за допомогою www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Перекладаємо за допомогою www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Перед перекладом зі шведської на данську</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Переклад зі шведської на данську завершено</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Не вдалося перекласти зі шведської на данську</TranslationFromSwedishToDanishFailed>

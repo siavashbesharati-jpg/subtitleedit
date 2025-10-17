@@ -86,11 +86,11 @@ GNU općom javnom licencom, a to znači da ga možete
 dijeliti, mijenjati i koristiti kako god vi želite.
 
 Izvorni kôd, kao i najnovije izdanje programa
-nalaze se na internet adresi www.nikse.dk.
+nalaze se na internet adresi www.iranexpedia.
 
 Svaki prijedlog je dobrodošao.
 
-E-pošta:nikse.dk@gmail.com</AboutText1>
+E-pošta:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Dodavanje riječi u popis naziva/izuzetaka</Title>
@@ -1277,7 +1277,7 @@ koji bi trebao biti usklađen s video datotekom.
     <SubtitleTranslated>Podnaslov je preveden.</SubtitleTranslated>
     <TranslateSwedishToDanish>Prevedi učitan Švedski podnaslov u Danski</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Prevedi učitan Švedski podnaslov u Danski?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Prevodim preko www.nikse.dk/mt…</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Prevodim preko www.iranexpedia/mt…</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Prevedeno iz Švedskog u Danski</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Podnaslov je preveden sa Švedskog u Danski.</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Ne mogu prevesti podnaslov sa Švedskog u Danski.</TranslationFromSwedishToDanishFailed>

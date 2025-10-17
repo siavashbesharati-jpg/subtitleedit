@@ -114,9 +114,9 @@
 		الكود المصدري لبرنامج C# متاح على الموقع:
 		https://github.com/SubtitleEdit/subtitleedit
 
-		تفضل بزيارة https://www.nikse.dk للحصول على أحدث إصدار.
+		تفضل بزيارة https://www.iranexpedia للحصول على أحدث إصدار.
 
-		للاقتراحات والتعليقات: البريد الإلكتروني: mailto:nikse.dk@gmail.com
+		للاقتراحات والتعليقات: البريد الإلكتروني: mailto:iranexpedia@gmail.com
 	</AboutText1>
   </About>
   <AddToNames>
@@ -1755,7 +1755,7 @@ ames.xml)</FixOnlyNamesCasing>
     <SubtitleTranslated>الترجمة مترجمة</SubtitleTranslated>
     <TranslateSwedishToDanish>ترجمة الترجمة السويدية المحملة حاليًا إلى الدنماركية</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>ترجمة الترجمة السويدية المحملة حاليًا (هل أنت متأكد من أنها سويدية؟) إلى اللغة الدانمركية؟</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>الترجمة عبر www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>الترجمة عبر www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>قبل الترجمة السويدية إلى الدنماركية</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>الترجمة من السويدية إلى الدنماركية كاملة</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>فشلت الترجمة من السويدية إلى الدنماركية</TranslationFromSwedishToDanishFailed>

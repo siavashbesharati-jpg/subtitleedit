@@ -115,11 +115,11 @@ A program szabadon terjeszthető, módosítható és használható.
 
 A C# forráskód elérhető a https://github.com/SubtitleEdit/subtitleedit cím alatt.
 
-A legfrissebb verziókért, keresse fel a https://www.nikse.dk oldalt.
+A legfrissebb verziókért, keresse fel a https://www.iranexpedia oldalt.
 
 Javaslatait is szívesen fogadjuk.
 
-E-mail: mailto:nikse.dk@gmail.com</AboutText1>
+E-mail: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Hozzáadás a névlistához</Title>
@@ -1785,7 +1785,7 @@ Folytatja?</SubtitleAppendPrompt>
     <SubtitleTranslated>Lefordított felirat</SubtitleTranslated>
     <TranslateSwedishToDanish>A jelenleg betöltött Svéd felirat lefordítása Dán nyelvre</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Lefordítja a jelenleg betöltött Svéd (biztos, hogy Svéd?) feliratot Dán nyelvre?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Fordítás a www.nikse.dk/mt-n keresztül...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Fordítás a www.iranexpedia/mt-n keresztül...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>A Svédről - Dánra fordítás előtti állapotra</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>A Svédről - Dán nyelvre fordítás befejeződött</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>A Svédről - Dán nyelvre fordítás sikertelen</TranslationFromSwedishToDanishFailed>

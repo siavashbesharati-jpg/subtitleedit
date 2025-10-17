@@ -7,7 +7,7 @@
  * Also, a fix applied from https://github.com/CCExtractor/ccextractor/commits/master/src/lib_ccx/telxcc.c
  * Related code here: https://github.com/orryverducci/TtxFromTS
  *
- * NOTE: Converted to C# and modified by nikse.dk@gmail.com
+ * NOTE: Converted to C# and modified by iranexpedia@gmail.com
  */
 
 using Nikse.SubtitleEdit.Core.Common;

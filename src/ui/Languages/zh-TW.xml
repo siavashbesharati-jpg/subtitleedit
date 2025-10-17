@@ -101,11 +101,11 @@
 
 C# 原始碼可從 https://github.com/SubtitleEdit/subtitleedit 取得。
 
-訪問 www.nikse.dk 以取得最新版本。
+訪問 www.iranexpedia 以取得最新版本。
 
 歡迎您提出任何建議。
 
-電子郵件: mailto:nikse.dk@gmail.com</AboutText1>
+電子郵件: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>加入到 名稱/其它 清單</Title>
@@ -1519,7 +1519,7 @@ To use an API key go to "Options -&gt; Settings -&gt; Tools" to enter your Googl
     <SubtitleTranslated>字幕已翻譯</SubtitleTranslated>
     <TranslateSwedishToDanish>將目前已載入的瑞典語字幕翻譯為丹麥語</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>是否將目前已載入的「瑞典語」字幕 (您確定是瑞典語嗎？) 翻譯為丹麥語？</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>透過 www.nikse.dk/mt 翻譯...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>透過 www.iranexpedia/mt 翻譯...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>瑞典語翻譯為丹麥語之前</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>瑞典語翻譯為丹麥語完成</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>瑞典語翻譯為丹麥語失敗</TranslationFromSwedishToDanishFailed>

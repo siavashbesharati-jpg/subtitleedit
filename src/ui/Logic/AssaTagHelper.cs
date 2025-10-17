@@ -52,85 +52,85 @@ namespace Nikse.SubtitleEdit.Logic
 
         private static readonly List<IntellisenseItem> Keywords = new List<IntellisenseItem>
         {
-            new IntellisenseItem("{\\i1}",  "Italic on", false, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#italic"),
-            new IntellisenseItem("{\\i0}",  "Italic off", false,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#italic"),
+            new IntellisenseItem("{\\i1}",  "Italic on", false, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#italic"),
+            new IntellisenseItem("{\\i0}",  "Italic off", false,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#italic"),
 
-            new IntellisenseItem("{\\b1}",  "Bold on", false,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#bold"),
-            new IntellisenseItem("{\\b0}",  "Bold off", false,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#bold"),
+            new IntellisenseItem("{\\b1}",  "Bold on", false,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#bold"),
+            new IntellisenseItem("{\\b0}",  "Bold off", false,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#bold"),
 
-            new IntellisenseItem("{\\u1}",  "Underline on", false,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#underline"),
-            new IntellisenseItem("{\\u0}",  "Underline off", false,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#underline"),
+            new IntellisenseItem("{\\u1}",  "Underline on", false,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#underline"),
+            new IntellisenseItem("{\\u0}",  "Underline off", false,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#underline"),
 
-            new IntellisenseItem("{\\s1}",  "Strikeout on", false,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#strikeout"),
-            new IntellisenseItem("{\\s0}",  "Strikeout off", false,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#strikeout"),
+            new IntellisenseItem("{\\s1}",  "Strikeout on", false,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#strikeout"),
+            new IntellisenseItem("{\\s0}",  "Strikeout off", false,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#strikeout"),
 
-            new IntellisenseItem("{\\bord<width>}",  "Border", true,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#border"),
-            new IntellisenseItem("{\\xbord<x>}",  "Border width", true,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#border"),
-            new IntellisenseItem("{\\ybord<y>}",  "Border height", true,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#border"),
+            new IntellisenseItem("{\\bord<width>}",  "Border", true,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#border"),
+            new IntellisenseItem("{\\xbord<x>}",  "Border width", true,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#border"),
+            new IntellisenseItem("{\\ybord<y>}",  "Border height", true,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#border"),
 
-            new IntellisenseItem("{\\pos(x,y)}",  "Set position", false, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#pos"),
+            new IntellisenseItem("{\\pos(x,y)}",  "Set position", false, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#pos"),
 
-            new IntellisenseItem("{\\c&Hbbggrr&}",  "Color", true,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#primary-color"),
-            new IntellisenseItem("{\\3c&Hbbggrr&}",  "Color for outline/opaque box", true, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#outline-color"),
-            new IntellisenseItem("{\\4c&Hbbggrr&}",  "Color for shadow", true, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#shadow-color"),
+            new IntellisenseItem("{\\c&Hbbggrr&}",  "Color", true,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#primary-color"),
+            new IntellisenseItem("{\\3c&Hbbggrr&}",  "Color for outline/opaque box", true, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#outline-color"),
+            new IntellisenseItem("{\\4c&Hbbggrr&}",  "Color for shadow", true, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#shadow-color"),
 
-            new IntellisenseItem("{\\fade(a1,a2,a3,t1,t2,t3,t4)}",  "Fade advanced",false, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#fade-in-out"),
-            new IntellisenseItem("{\\fad(fadein time,fadeout time)}",  "Fade in/out in milliseconds", false, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#fade-in-out"),
+            new IntellisenseItem("{\\fade(a1,a2,a3,t1,t2,t3,t4)}",  "Fade advanced",false, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#fade-in-out"),
+            new IntellisenseItem("{\\fad(fadein time,fadeout time)}",  "Fade in/out in milliseconds", false, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#fade-in-out"),
 
-            new IntellisenseItem("{\\fn<font_name>}",  "Font name", false,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#font-name"),
-            new IntellisenseItem("{\\fs<font_size>}",  "Font size", true,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#font-size"),
+            new IntellisenseItem("{\\fn<font_name>}",  "Font name", false,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#font-name"),
+            new IntellisenseItem("{\\fs<font_size>}",  "Font size", true,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#font-size"),
 
-            new IntellisenseItem("{\\an7}",  "Align top left", false,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#alignment"),
-            new IntellisenseItem("{\\an8}",  "Align top center", false,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#alignment"),
-            new IntellisenseItem("{\\an9}",  "Align top right", false,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#alignment"),
-            new IntellisenseItem("{\\an4}",  "Align center left", false,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#alignment"),
-            new IntellisenseItem("{\\an5}",  "Align center middle", false,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#alignment"),
-            new IntellisenseItem("{\\an6}",  "Align center right", false,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#alignment"),
-            new IntellisenseItem("{\\an1}",  "Align bottom left", false,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#alignment"),
-            new IntellisenseItem("{\\an2}",  "Align bottom middle", false,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#alignment"),
-            new IntellisenseItem("{\\an3}",  "Align bottom right", false,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#alignment"),
+            new IntellisenseItem("{\\an7}",  "Align top left", false,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#alignment"),
+            new IntellisenseItem("{\\an8}",  "Align top center", false,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#alignment"),
+            new IntellisenseItem("{\\an9}",  "Align top right", false,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#alignment"),
+            new IntellisenseItem("{\\an4}",  "Align center left", false,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#alignment"),
+            new IntellisenseItem("{\\an5}",  "Align center middle", false,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#alignment"),
+            new IntellisenseItem("{\\an6}",  "Align center right", false,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#alignment"),
+            new IntellisenseItem("{\\an1}",  "Align bottom left", false,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#alignment"),
+            new IntellisenseItem("{\\an2}",  "Align bottom middle", false,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#alignment"),
+            new IntellisenseItem("{\\an3}",  "Align bottom right", false,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#alignment"),
 
-            new IntellisenseItem("{\\shad<depth>}",  "Shadow", true,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#shadow"),
-            new IntellisenseItem("{\\xshad<x>}",  "Shadow width", true,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#shadow"),
-            new IntellisenseItem("{\\yshad<y>}",  "Shadow height", true,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#shadow"),
+            new IntellisenseItem("{\\shad<depth>}",  "Shadow", true,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#shadow"),
+            new IntellisenseItem("{\\xshad<x>}",  "Shadow width", true,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#shadow"),
+            new IntellisenseItem("{\\yshad<y>}",  "Shadow height", true,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#shadow"),
 
-            new IntellisenseItem("{\\be}",  "Blur edges", true,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#blur-edges"),
-            new IntellisenseItem("{\\be0}",  "Blur edges off", true,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#blur-edges"),
-            new IntellisenseItem("{\\be1}",  "Blur edges on", true,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#blur-edges"),
+            new IntellisenseItem("{\\be}",  "Blur edges", true,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#blur-edges"),
+            new IntellisenseItem("{\\be0}",  "Blur edges off", true,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#blur-edges"),
+            new IntellisenseItem("{\\be1}",  "Blur edges on", true,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#blur-edges"),
 
-            new IntellisenseItem("{\\fscx<percent>}",  "Scale X percentage", true,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#font-scale"),
-            new IntellisenseItem("{\\fscy<percent>}",  "Scale Y percentage", true,"https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#font-scale"),
+            new IntellisenseItem("{\\fscx<percent>}",  "Scale X percentage", true,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#font-scale"),
+            new IntellisenseItem("{\\fscy<percent>}",  "Scale Y percentage", true,"https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#font-scale"),
 
-            new IntellisenseItem("{\\fsp<pixels>}",  "Spacing between letters in pixels", true, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#font-spacing"),
+            new IntellisenseItem("{\\fsp<pixels>}",  "Spacing between letters in pixels", true, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#font-spacing"),
 
-            new IntellisenseItem("{\\fr<degree>}",  "Angle (z axis for text rotation)", true, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#text-rotation"),
-            new IntellisenseItem("{\\frx<degree>}",  "Angle (x axis for text rotation)", true, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#text-rotation"),
-            new IntellisenseItem("{\\fry<degree>}",  "Angle (y axis for text rotation)", true, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#text-rotation"),
-            new IntellisenseItem("{\\frz<degree>}",  "Angle (z axis for text rotation)", true, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#text-rotation"),
+            new IntellisenseItem("{\\fr<degree>}",  "Angle (z axis for text rotation)", true, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#text-rotation"),
+            new IntellisenseItem("{\\frx<degree>}",  "Angle (x axis for text rotation)", true, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#text-rotation"),
+            new IntellisenseItem("{\\fry<degree>}",  "Angle (y axis for text rotation)", true, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#text-rotation"),
+            new IntellisenseItem("{\\frz<degree>}",  "Angle (z axis for text rotation)", true, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#text-rotation"),
 
-            new IntellisenseItem("{\\org<x,y>}",  "Set origin point for rotation", false, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#origin"),
+            new IntellisenseItem("{\\org<x,y>}",  "Set origin point for rotation", false, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#origin"),
 
-            new IntellisenseItem("{\\fax<degree>}",  "Shearing transformation (x axis)", true, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#text-shearing"),
-            new IntellisenseItem("{\\fay<degree>}",  "Shearing transformation (y axis)", true, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#text-shearing"),
+            new IntellisenseItem("{\\fax<degree>}",  "Shearing transformation (x axis)", true, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#text-shearing"),
+            new IntellisenseItem("{\\fay<degree>}",  "Shearing transformation (y axis)", true, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#text-shearing"),
 
             //Obsolete... use Unicode: new IntellisenseItem("{\\fe<charset>}",  "Encoding", false),
 
-            new IntellisenseItem("{\\alpha&Haa}",  "Alpha (00=fully visible, ff=transparent)", true, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#alpha"),
-            new IntellisenseItem("{\\1a&Haa}",  "Alpha for text (00=fully visible, ff=transparent)", true, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#alpha"),
-            new IntellisenseItem("{\\3a&Haa}",  "Alpha for outline box (00=fully visible, ff=transparent)", true, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#alpha"),
-            new IntellisenseItem("{\\4a&Haa}",  "Alpha for shadow (00=fully visible, ff=transparent)", true, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#alpha"),
+            new IntellisenseItem("{\\alpha&Haa}",  "Alpha (00=fully visible, ff=transparent)", true, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#alpha"),
+            new IntellisenseItem("{\\1a&Haa}",  "Alpha for text (00=fully visible, ff=transparent)", true, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#alpha"),
+            new IntellisenseItem("{\\3a&Haa}",  "Alpha for outline box (00=fully visible, ff=transparent)", true, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#alpha"),
+            new IntellisenseItem("{\\4a&Haa}",  "Alpha for shadow (00=fully visible, ff=transparent)", true, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#alpha"),
 
-            new IntellisenseItem("{\\clip(x1,y1,x2,y2)}",  "Clips (hides) any drawing outside the rectangle", true, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#clip"),
-            new IntellisenseItem("{\\iclip(x1,y1,x2,y2)}",  "Clips (hides) any drawing inside the rectangle", true, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#clip"),
+            new IntellisenseItem("{\\clip(x1,y1,x2,y2)}",  "Clips (hides) any drawing outside the rectangle", true, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#clip"),
+            new IntellisenseItem("{\\iclip(x1,y1,x2,y2)}",  "Clips (hides) any drawing inside the rectangle", true, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#clip"),
 
-            new IntellisenseItem("{\\r}",  "Reset inline styles", false, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#reset"),
+            new IntellisenseItem("{\\r}",  "Reset inline styles", false, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#reset"),
 
-            new IntellisenseItem("{\\move(x1,y1,x2,y2,start,end)}",  "Move", false, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#move"),
+            new IntellisenseItem("{\\move(x1,y1,x2,y2,start,end)}",  "Move", false, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#move"),
 
-            new IntellisenseItem("{\\t(<style modifiers>)}",  "Animated transform", false, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#transform"),
-            new IntellisenseItem("{\\t(<accel,style modifiers>)}",  "Animated transform", false, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#transform"),
-            new IntellisenseItem("{\\t(<t1,t2,style modifiers>)}",  "Animated transform", false, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#transform"),
-            new IntellisenseItem("{\\t(<t1,t2,accel,style modifiers>)}",  "Animated transform", false, "https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#transform"),
+            new IntellisenseItem("{\\t(<style modifiers>)}",  "Animated transform", false, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#transform"),
+            new IntellisenseItem("{\\t(<accel,style modifiers>)}",  "Animated transform", false, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#transform"),
+            new IntellisenseItem("{\\t(<t1,t2,style modifiers>)}",  "Animated transform", false, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#transform"),
+            new IntellisenseItem("{\\t(<t1,t2,accel,style modifiers>)}",  "Animated transform", false, "https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#transform"),
 
             // TODO: Karaoke
             // 2a&Haa --- fix

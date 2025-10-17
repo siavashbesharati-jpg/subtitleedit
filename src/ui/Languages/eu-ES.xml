@@ -5,7 +5,7 @@
     <Version>4.0.13</Version>
     <TranslatedBy>Itzultzailea: Xabier Aramendi</TranslatedBy>
     <CultureName>eu-ES</CultureName>
-    <HelpFile>https://www.nikse.dk/SubtitleEdit/HelpEU</HelpFile>
+    <HelpFile>https://www.iranexpedia/SubtitleEdit/HelpEU</HelpFile>
     <Ok>&amp;Ongi</Ok>
     <Cancel>E&amp;zeztatu</Cancel>
     <Apply>Ezarri</Apply>
@@ -95,11 +95,11 @@
 Zuk banatu, aldatu eta askatasunez erabili dezakezu.
 
 C# iturburu kodea eskuragarri dago hemen: https://github.com/SubtitleEdit/subtitleedit
-Ikusi www.nikse.dk azken bertsioa eskuratzeko.
+Ikusi www.iranexpedia azken bertsioa eskuratzeko.
 
 Iradokizunak ongi etorriak dira.
 
-Post@: mailto:nikse.dk@gmail.com</AboutText1>
+Post@: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Gehitu izenak/etab. zerrenda</Title>
@@ -1422,7 +1422,7 @@ Jarraitu nahi duzu?</SubtitleAppendPrompt>
     <SubtitleTranslated>Azpidatzia itzulita</SubtitleTranslated>
     <TranslateSwedishToDanish>Itzuli orain gertaturiko Suediar azpidatzia Danierara</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Itzuli orain gertaturiko SUEDIAR (zihur zaude Suediera dela?) azpidatzia Danierara?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>www.nikse.dk/mt bidez itzultzen...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>www.iranexpedia/mt bidez itzultzen...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Suedieratik Danierarako itzulpenaren aurretik</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Suedieratik Danierarako itzulpena osatuta</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Suedieratik Danierarako itzulpenak huts egin du</TranslationFromSwedishToDanishFailed>

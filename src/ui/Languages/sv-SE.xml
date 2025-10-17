@@ -115,11 +115,11 @@ Du kan distribuera, modifiera och använda den fritt.
 
 C # källkod är tillgänglig på https://github.com/SubtitleEdit/subtitleedit
 
-Besök www.nikse.dk för den senaste versionen.
+Besök www.iranexpedia för den senaste versionen.
 
 Förslag är mycket välkomna.
 
-E-post: mailto:nikse.dk@gmail.com</AboutText1>
+E-post: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Lägg till namnlista</Title>
@@ -1787,7 +1787,7 @@ Fortsätta?</SubtitleAppendPrompt>
     <SubtitleTranslated>Text översatt</SubtitleTranslated>
     <TranslateSwedishToDanish>Översätt laddad svensk text till danska</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Översätt laddad Svenska (är du säker att det är svenska?) text till danska?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Översätta via www.nikse.dk/mt</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Översätta via www.iranexpedia/mt</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Före svensk till dansk översättning</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Översättning från svenska till danska komplett</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Översättning från svenska till danska misslyckades</TranslationFromSwedishToDanishFailed>

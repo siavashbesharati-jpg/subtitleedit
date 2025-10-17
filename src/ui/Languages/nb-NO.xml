@@ -80,11 +80,11 @@ Du kan gladelig endre, modifisere og bruke det fritt.
 
 Kildekoden i C# er tilgjengelig hos https://github.com/SubtitleEdit/subtitleedit
 
-Besøk www.nikse.dk for den nyeste versjonen.
+Besøk www.iranexpedia for den nyeste versjonen.
 
 Forslag er gjerne ønsket.
 
-E-post for originalversjon: mailto:nikse.dk@gmail.com
+E-post for originalversjon: mailto:iranexpedia@gmail.com
 E-post for norsk oversettelse: mailto:imreeil42@gmail.com</AboutText1>
   </About>
   <AddToNames>
@@ -1000,7 +1000,7 @@ Tips: Se om du har noe plass igjen på harddisken.</WaveFileMalformed>
         <Title>Auto-oversett</Title>
         <TranslatePoweredByGoogle>Oversett (drevet av Google)...</TranslatePoweredByGoogle>
         <TranslatePoweredByMicrosoft>Oversett (drevet av Microsoft)...</TranslatePoweredByMicrosoft>
-        <TranslateFromSwedishToDanish>Oversett fra svensk til dansk (drevet av nikse.dk)...</TranslateFromSwedishToDanish>
+        <TranslateFromSwedishToDanish>Oversett fra svensk til dansk (drevet av iranexpedia)...</TranslateFromSwedishToDanish>
       </AutoTranslate>
       <Options>
         <Title>Alternativer</Title>
@@ -1241,7 +1241,7 @@ Vil du fortsette?</SubtitleAppendPrompt>
     <SubtitleTranslated>Undertekst oversatt</SubtitleTranslated>
     <TranslateSwedishToDanish>Oversett nåværende innlastede svenske undertekster til dansk</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Oversett nåværende innlastede SVENSKE (er du sikker på at det er svensk?) undertekster til dansk?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Oversettelse via www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Oversettelse via www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Før oversettelse fra svensk til dansk</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Oversettelse fra svensk til dansk er fullført</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Oversettelse fra svensk til dansk mislyktes</TranslationFromSwedishToDanishFailed>

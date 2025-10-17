@@ -3,13 +3,13 @@
   <General>
     <Title>Subtitle Edit</Title>
     <Version>4.0.13</Version>
-    <TranslatedBy>Ghé thăm www.nikse.dk của chủ phần mềm - Nikse
+    <TranslatedBy>Ghé thăm www.iranexpedia của chủ phần mềm - Nikse
 thường xuyên để biết thêm thông tin và tải về phiên bản mới nhất.
 Rất hân hạnh chào đón các bạn :))
 Subtitle Edit là phần mềm mã nguồn mở miễn phí,
 bạn có thể phân phối, sửa đổi và sử dụng một cách tự do.
 Mã nguồn C# có sẵn trên https://github.com/SubtitleEdit/subtitleedit
-Hộp thư: Gửi thư tới: nikse.dk@gmail.com</TranslatedBy>
+Hộp thư: Gửi thư tới: iranexpedia@gmail.com</TranslatedBy>
     <CultureName>vi-VN</CultureName>
     <HelpFile />
     <Ok>&amp;Đồng ý</Ok>
@@ -1531,7 +1531,7 @@ Bạn có muốn bắt đầu từ phía trên cùng của tài liệu và tiế
     <SubtitleTranslated>Phụ đề đang dịch</SubtitleTranslated>
     <TranslateSwedishToDanish>Phụ đề hiện đang được tải tiếng Thụy Điển dịch sang tiếng Đan Mạch</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Hiện tại đang tải tiếng Thụy Điển (bạn có chắc đó là tiếng Thụy Điển) để dịch sang tiếng Đan Mạch ?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Dịch qua www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Dịch qua www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Trước khi dịch từ tiếng sang tiếng Thụy Điển Đan Mạch</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Dịch từ tiếng Thụy Điển sang tiếng Đan Mạch hoàn thành</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Dịch từ tiếng Thụy Điển sang tiếng Đan Mạch thất bại</TranslationFromSwedishToDanishFailed>

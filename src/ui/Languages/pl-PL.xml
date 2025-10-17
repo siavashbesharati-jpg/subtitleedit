@@ -115,11 +115,11 @@ Możesz go dowolnie rozpowszechniać, modyfikować i używać.
 
 Kod źródłowy C# dostępny jest na https://github.com/SubtitleEdit/subtitleedit
 
-Aby pobrać najnowszą wersję odwiedź https://www.nikse.dk
+Aby pobrać najnowszą wersję odwiedź https://www.iranexpedia
 
 Wszelkie sugestie mile widziane.
 
-Email: mailto:nikse.dk@gmail.com</AboutText1>
+Email: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Dodaj do listy nazwisk</Title>
@@ -1783,7 +1783,7 @@ Kontynuować?</SubtitleAppendPrompt>
     <SubtitleTranslated>Przetłumaczone napisy</SubtitleTranslated>
     <TranslateSwedishToDanish>Przetłumacz aktualnie wczytane szwedzkie napisy na duński</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Przetłumaczyć aktualnie wczytane SZWEDZKIE napisy (jesteś pewny, że to szwedzki?) na duński?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Przetłumacz za pomocą www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Przetłumacz za pomocą www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Przed tłumaczeniem ze szwedzkiego na duński</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Tłumaczenie ze szwedzkiego na duński zakończone</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Tłumaczenie ze szwedzkiego na duński nie powiodło się</TranslationFromSwedishToDanishFailed>

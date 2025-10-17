@@ -118,11 +118,11 @@ dzoole@hotmail.com</TranslatedBy>
 
 C# изворниот код е достапен на https://github.com/SubtitleEdit/subtitleedit
 
-За најновата верзија посетете ја страницата https://www.nikse.dk 
+За најновата верзија посетете ја страницата https://www.iranexpedia 
 
 Сите предлози се добрoдојдени.
 
-Email: mailto:nikse.dk@gmail.com</AboutText1>
+Email: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Додај во листа со називи</Title>
@@ -1775,7 +1775,7 @@ Email: mailto:nikse.dk@gmail.com</AboutText1>
     <SubtitleTranslated>Титлот е преведен</SubtitleTranslated>
     <TranslateSwedishToDanish>Преведувањето моментално вчита Шведски титл на Дански</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Преведувањето моментално вчита ШВЕДСКИ (сигурни сте дека е) титл на Дански?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Преведување преку www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Преведување преку www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Пред преведување од Шведски на Дански</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Преведувањето од Шведски на Дански е завршено</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Преведувањето од Шведски на Дански е неуспешно</TranslationFromSwedishToDanishFailed>

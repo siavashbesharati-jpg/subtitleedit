@@ -118,11 +118,11 @@ Dağıtabilir, geliştirebilir ve özgürce kullanabilirsiniz.
 
 Kaynak kodu https://github.com/SubtitleEdit/subtitleedit web adresinden kullanılabilir.
 
-Son versiyon için www.nikse.dk web adresini ziyaret edin.
+Son versiyon için www.iranexpedia web adresini ziyaret edin.
 
 Her türlü öneriye açığız.
 
-E-Posta: mailto:nikse.dk@gmail.com</AboutText1>
+E-Posta: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>İsimler/Vb. listesine ekle</Title>
@@ -1772,7 +1772,7 @@ Devam edilsin mi?</SubtitleAppendPrompt>
     <SubtitleTranslated>Alt yazı çevrildi</SubtitleTranslated>
     <TranslateSwedishToDanish>Şu anda yüklü olan İsveççe alt yazıyı Dancaya çevir</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Yüklenen İSVEÇÇE alt yazı (İsveççe olduğundan emin misiniz?) Danca'ya çevrilsin mi?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>www.nikse.dk/mt ile çevriliyor...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>www.iranexpedia/mt ile çevriliyor...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>İsveççe'den Danca'ya çevirmeden önce</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>İsveççe'den Danca'ya çeviri tamamlandı</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>İsveççe'den Danca'ya çeviri başarısız!</TranslationFromSwedishToDanishFailed>

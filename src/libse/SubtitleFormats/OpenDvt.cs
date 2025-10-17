@@ -45,9 +45,9 @@ namespace Nikse.SubtitleEdit.Core.SubtitleFormats
                 "    <ID>" + guid + "</ID> " + Environment.NewLine +
                 "    <AppName>Subtitle Edit</AppName> " + Environment.NewLine +
                 "    <AppVersion>2.9</AppVersion> " + Environment.NewLine +
-                "    <VendorName>Nikse.dk</VendorName> " + Environment.NewLine +
+                "    <VendorName>iranexpedia</VendorName> " + Environment.NewLine +
                 "    <VendorPhone></VendorPhone> " + Environment.NewLine +
-                "    <VendorURL>www.nikse.dk.com</VendorURL> " + Environment.NewLine +
+                "    <VendorURL>www.iranexpedia.com</VendorURL> " + Environment.NewLine +
                 "  </Origination>" + Environment.NewLine +
                 "  <Case>" + Environment.NewLine +
                 "    <MatterNumber /> " + Environment.NewLine +

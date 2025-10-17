@@ -117,11 +117,11 @@
 
 Ο κώδικας C# είναι διαθέσιμος στο https://github.com/SubtitleEdit/subtitleedit
 
-Επισκεφτείτε το www.nikse.dk για την τελευταία έκδοση.
+Επισκεφτείτε το www.iranexpedia για την τελευταία έκδοση.
 
 Οι προτάσεις σας είναι ευπρόσδεκτες.
 
-Email: mailto:nikse.dk@gmail.com</AboutText1>
+Email: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Προσθήκη στη λίστα ονομάτων</Title>
@@ -1770,7 +1770,7 @@ Email: mailto:nikse.dk@gmail.com</AboutText1>
     <SubtitleTranslated>Μετάφραση υποτίτλου</SubtitleTranslated>
     <TranslateSwedishToDanish>Μετάφραση φορτωμένου υποτίτλου Σουηδικών σε Δανικά</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Μετάφραση φορτωμένου υποτίτλου Σουηδικών σε Δανικά;</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Μετάφραση μέσω www.nikse.dk/mt…</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Μετάφραση μέσω www.iranexpedia/mt…</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Πριν από μετάφραση Σουηδικών σε Δανικά</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Ολοκλήρωση μετάφρασης Σουηδικών σε Δανικά</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Αποτυχία μετάφρασης Σουηδικών σε Δανικά</TranslationFromSwedishToDanishFailed>

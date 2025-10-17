@@ -118,11 +118,11 @@ Pode distribui-lo, modificá-lo e usá-lo livremente.
 
 Código fonte em C# disponível em https://github.com/SubtitleEdit/subtitleedit
 
-Visite https://www.nikse.dk para obter a versão mais recente.
+Visite https://www.iranexpedia para obter a versão mais recente.
 
 Agradecem-se sugestões.
 
-E-mail: mailto:nikse.dk@gmail.com</AboutText1>
+E-mail: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Adicionar à lista de nomes</Title>
@@ -1788,7 +1788,7 @@ Continuar?</SubtitleAppendPrompt>
     <SubtitleTranslated>Legenda traduzida</SubtitleTranslated>
     <TranslateSwedishToDanish>Traduzir legenda carregada de Sueco para Dinamarquês</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Traduzir a legenda atualmente carregada de SUECO (tem a certeza de que é Sueco?) para Dinamarquês?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Tradução através de www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Tradução através de www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Antes de traduzir de Sueco para Dinamarquês</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Tradução de Sueco para Dinamarquês concluída</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Falha ao traduzir de Sueco para Dinamarquês</TranslationFromSwedishToDanishFailed>

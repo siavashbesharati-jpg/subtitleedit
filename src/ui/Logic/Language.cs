@@ -140,7 +140,7 @@ namespace Nikse.SubtitleEdit.Logic
 
             General = new LanguageStructure.General
             {
-                Title = "Subtitle Edit",
+                Title = "CaptionFlow",
                 Version = "3.5",
                 TranslatedBy = " ",
                 CultureName = "en-US",
@@ -250,17 +250,17 @@ namespace Nikse.SubtitleEdit.Logic
 
             About = new LanguageStructure.About
             {
-                Title = "About Subtitle Edit",
+                Title = "About CaptionFlow",
                 AboutText1 = "Subtitle Edit is Free Software under the GNU Public License." + Environment.NewLine +
                              "You may distribute, modify and use it freely." + Environment.NewLine +
                              Environment.NewLine +
                              "C# source code is available on https://github.com/SubtitleEdit/subtitleedit" + Environment.NewLine +
                              Environment.NewLine +
-                             "Visit https://www.nikse.dk for the latest version." + Environment.NewLine +
+                             "Visit https://www.iranexpedia for the latest version." + Environment.NewLine +
                              Environment.NewLine +
                              "Suggestions are very welcome." + Environment.NewLine +
                              Environment.NewLine +
-                             "Email: mailto:nikse.dk@gmail.com",
+                             "Email: mailto:iranexpedia@gmail.com",
             };
 
             AddToNames = new LanguageStructure.AddToNames
@@ -1708,7 +1708,7 @@ namespace Nikse.SubtitleEdit.Logic
                 SubtitleTranslated = "Subtitle translated",
                 TranslateSwedishToDanish = "Translate currently loaded Swedish subtitle to Danish",
                 TranslateSwedishToDanishWarning = "Translate currently loaded SWEDISH (are you sure it's Swedish?) subtitle to Danish?",
-                TranslatingViaNikseDkMt = "Translating via www.nikse.dk/mt...",
+                TranslatingViaNikseDkMt = "Translating via www.iranexpedia/mt...",
                 BeforeSwedishToDanishTranslation = "Before Swedish to Danish translation",
                 TranslationFromSwedishToDanishComplete = "Translation from Swedish to Danish complete",
                 TranslationFromSwedishToDanishFailed = "Translation from Swedish to Danish failed",

@@ -116,9 +116,9 @@
 
 C# ծրագրի սկզբնական կոդը հասանելի է https://github.com/SubtitleEdit/subtitleedit կայքում
 
-Այցելեք www.nikse.dk կայք՝ վերջին տարբերակը և նորությունները ստանալու համար։ Առաջարկությունները շատ ողջունելի են։
+Այցելեք www.iranexpedia կայք՝ վերջին տարբերակը և նորությունները ստանալու համար։ Առաջարկությունները շատ ողջունելի են։
 
-Էլ. հասցե՝ mailto:nikse.dk@gmail.com</AboutText1>
+Էլ. հասցե՝ mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Ավելացնել անունների ցանկին</Title>
@@ -1787,7 +1787,7 @@ C# ծրագրի սկզբնական կոդը հասանելի է https://github.c
     <SubtitleTranslated>Ենթագիրը թարգմանված է</SubtitleTranslated>
     <TranslateSwedishToDanish>Թարգմանել ներկայումս բեռնված շվեդերեն ենթագրերը դանիերեն</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Թարգմանե՞լ ներկայումս բեռնված ՇՎԵԴԵՐԵՆ (համոզվա՞ծ եք, որ այն շվեդերեն է) ենթագիրը դանիերեն։</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Թարգմանեք www.nikse.dk/mt կայքի միջոցով․․․</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Թարգմանեք www.iranexpedia/mt կայքի միջոցով․․․</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Շվեդերենից Դանիերեն թարգմանությունից առաջ</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Շվեդերենից Դանիերեն թարգմանությունը պատրաստ է</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Շվեդերենից Դանիերեն թարգմանությունը չստացվեց</TranslationFromSwedishToDanishFailed>

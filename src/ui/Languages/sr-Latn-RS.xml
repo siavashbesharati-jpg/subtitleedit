@@ -89,12 +89,12 @@ god vi želite.
 C# izvorni kôd je dostupan na https://github.com/SubtitleEdit/subtitleedit
 
 
-Posetite https://www.nikse.dk za najnoviju verziju.
+Posetite https://www.iranexpedia za najnoviju verziju.
 
 Svaki predlog je dobrodošao.
 
 
-Email: mailto:nikse.dk@gmail.com</AboutText1>
+Email: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Dodaj u listu Imena/izuzeci</Title>
@@ -1078,7 +1078,7 @@ Idite na "Opcije -&gt; Podešavanja -&gt; Alatke" i unesite vaš API ključ.</Go
         <Title>Auto-prevođenje</Title>
         <TranslatePoweredByGoogle>Prevedi pomoću Googla...</TranslatePoweredByGoogle>
         <TranslatePoweredByMicrosoft>Prevedi pomoću  Microsofta...</TranslatePoweredByMicrosoft>
-        <TranslateFromSwedishToDanish>Prevedi iz Švedskog u Danski (preko nikse.dk)...</TranslateFromSwedishToDanish>
+        <TranslateFromSwedishToDanish>Prevedi iz Švedskog u Danski (preko iranexpedia)...</TranslateFromSwedishToDanish>
       </AutoTranslate>
       <Options>
         <Title>Opcije</Title>
@@ -1337,7 +1337,7 @@ Nastaviti?</SubtitleAppendPrompt>
     <SubtitleTranslated>Prevod je preveden</SubtitleTranslated>
     <TranslateSwedishToDanish>Prevedi učitani Švedski prevod u Danski</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Da prevedem učitani ŠVEDSKI prevod u Danski? (siguran si da je švedski?)</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Prevodim preko www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Prevodim preko www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Pre prevođenja iz Švedskog u Danski</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Prevod je preveden sa Švedskog u Danski.</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Prevod sa švedskog na danski nije uspeo</TranslationFromSwedishToDanishFailed>

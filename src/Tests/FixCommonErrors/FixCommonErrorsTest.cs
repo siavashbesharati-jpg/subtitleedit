@@ -731,9 +731,9 @@ namespace Tests.FixCommonErrors
         {
             using (var target = GetFixCommonErrorsLib())
             {
-                InitializeFixCommonErrorsLine(target, "Go to www.nikse.dk for more info");
+                InitializeFixCommonErrorsLine(target, "Go to www.iranexpedia for more info");
                 new FixMissingSpaces().Fix(_subtitle, new EmptyFixCallback());
-                Assert.AreEqual("Go to www.nikse.dk for more info", _subtitle.Paragraphs[0].Text);
+                Assert.AreEqual("Go to www.iranexpedia for more info", _subtitle.Paragraphs[0].Text);
             }
         }
 

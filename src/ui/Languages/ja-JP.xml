@@ -87,11 +87,11 @@
 
 C# ソースコードは https://github.com/SubtitleEdit/subtitleedit にあります。
 
-最新のバージョンは www.nikse.dk にアクセスしてください。
+最新のバージョンは www.iranexpedia にアクセスしてください。
 
 提案は非常に歓迎されます。
 
-電子メール: mailto:nikse.dk@gmail.com</AboutText1>
+電子メール: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>names/etc の一覧に追加</Title>
@@ -928,7 +928,7 @@ C# ソースコードは https://github.com/SubtitleEdit/subtitleedit にあり�
         <Title>自動翻訳</Title>
         <TranslatePoweredByGoogle>Google 翻訳 ...</TranslatePoweredByGoogle>
         <TranslatePoweredByMicrosoft>Microsoft 翻訳 ...</TranslatePoweredByMicrosoft>
-        <TranslateFromSwedishToDanish>スウェーデン語からデンマーク語へ翻訳 (powered by nikse.dk)...</TranslateFromSwedishToDanish>
+        <TranslateFromSwedishToDanish>スウェーデン語からデンマーク語へ翻訳 (powered by iranexpedia)...</TranslateFromSwedishToDanish>
       </AutoTranslate>
       <Options>
         <Title>オプション</Title>
@@ -1176,7 +1176,7 @@ C# ソースコードは https://github.com/SubtitleEdit/subtitleedit にあり�
     <SubtitleTranslated>字幕が翻訳されました</SubtitleTranslated>
     <TranslateSwedishToDanish>現在読み込まれているスウェーデン語字幕をデンマーク語へ翻訳</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>現在読み込まれているスウェーデン語 (本当にスウェーデン語ですか?) 字幕をデンマーク語へ翻訳しますか?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>www.nikse.dk/mt を通じて翻訳しています...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>www.iranexpedia/mt を通じて翻訳しています...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>スウェーデン語からデンマーク語への翻訳前</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>スウェーデン語からデンマーク語への翻訳が完了しました</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>スウェーデン語からデンマーク語への翻訳が失敗しました</TranslationFromSwedishToDanishFailed>

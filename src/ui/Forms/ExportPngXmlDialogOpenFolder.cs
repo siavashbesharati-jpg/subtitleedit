@@ -22,7 +22,7 @@ namespace Nikse.SubtitleEdit.Forms
 
             linkLabelOpenFolder.Text = LanguageSettings.Current.Main.Menu.File.OpenContainingFolder;
 
-            Text = "Subtitle Edit";
+            Text = "CaptionFlow";
             labelText.Text = text;
             UiUtil.FixLargeFonts(this, buttonOK);
 

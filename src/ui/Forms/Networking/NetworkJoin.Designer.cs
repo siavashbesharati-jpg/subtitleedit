@@ -72,7 +72,7 @@
             // 
             this.comboBoxWebServiceUrl.FormattingEnabled = true;
             this.comboBoxWebServiceUrl.Items.AddRange(new object[] {
-            "https://www.nikse.dk/se/SeService.asmx",
+            "https://www.iranexpedia/se/SeService.asmx",
             "https://se-net.azurewebsites.net/SeService.asmx"});
             this.comboBoxWebServiceUrl.Location = new System.Drawing.Point(125, 109);
             this.comboBoxWebServiceUrl.Name = "comboBoxWebServiceUrl";

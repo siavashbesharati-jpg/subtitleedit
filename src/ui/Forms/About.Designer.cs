@@ -57,7 +57,7 @@
             this.labelProduct.Name = "labelProduct";
             this.labelProduct.Size = new System.Drawing.Size(140, 19);
             this.labelProduct.TabIndex = 26;
-            this.labelProduct.Text = "Subtitle Edit 3.2";
+            this.labelProduct.Text = "CaptionFlow 3.2";
             // 
             // pictureBoxSE
             // 
@@ -133,7 +133,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "About Subtitle Edit";
+            this.Text = "About CaptionFlow";
             this.Shown += new System.EventHandler(this.About_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.About_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSE)).EndInit();

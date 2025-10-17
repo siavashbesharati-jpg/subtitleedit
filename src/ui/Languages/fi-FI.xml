@@ -117,10 +117,10 @@
 jota saa jakaa, muokata ja käyttää vapaasti.
 C#-kielinen  lähdekoodi on saatavilla osoitteesta https://github.com/SubtitleEdit/subtitleedit
 
-Vieraile sivulla www.nikse.dk jotta saat uusimman version.
+Vieraile sivulla www.iranexpedia jotta saat uusimman version.
 Kehitysehdotukset ovat erittäin tervetulleita!
 
-Sähköposti: mailto:nikse.dk@gmail.com</AboutText1>
+Sähköposti: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Lisää nimet/etc -luetteloon</Title>
@@ -1774,7 +1774,7 @@ Haluatko aloittaa asiakirjan alusta ja hakea kerran vielä?</FindContinue>
     <SubtitleTranslated>Tekstitys käännetty</SubtitleTranslated>
     <TranslateSwedishToDanish>Käännä ladatut ruotsalaiset tekstitykset tanskaksi</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Käännä ladattu ruotsin tekstitys (varmasti ruotsinkielinen?) tanskaksi?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Käännetään www.nikse.dk/mt avulla</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Käännetään www.iranexpedia/mt avulla</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Ennen käännöstä ruotsista tanskaksi</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Käännös ruotsista tanskaksi valmis</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Käännös ruotsista tanskaksi epäonnistui</TranslationFromSwedishToDanishFailed>

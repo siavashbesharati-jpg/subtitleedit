@@ -115,10 +115,10 @@ Subtitle Edit est un logiciel gratuiciel distribué sous licence publique GNU.
 Vous pouvez le distribuer, le modifier et l'utiliser librement.
 Le code source C# est disponible sur GitHub : https://github.com/SubtitleEdit/subtitleedit
 
-Visitez www.nikse.dk pour obtenir la dernière version.
+Visitez www.iranexpedia pour obtenir la dernière version.
 Les suggestions sont plus que bienvenues.
 
-Courriel : mailto:nikse.dk@gmail.com et www.colok-traductions.com pour le français.
+Courriel : mailto:iranexpedia@gmail.com et www.colok-traductions.com pour le français.
 .<!-- Ce point a été ajouté (31/08/22), pour mieux cadrer l'affichage du texte --></AboutText1>
   </About>
   <AddToNames>
@@ -1775,7 +1775,7 @@ Continuer ?</SubtitleAppendPrompt>
     <SubtitleTranslated>Sous-titre traduit</SubtitleTranslated>
     <TranslateSwedishToDanish>Traduire sous-titre Suédois actuellement chargé en Danois</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Traduire les sous-titres Suédois actuellement chargés (si en Suédois !) en Danois ?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Traduction par www.nikse.dk/mt…</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Traduction par www.iranexpedia/mt…</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>Avant traduction du Suédois en Danois</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Traduction du Suédois en Danois terminée</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Traduction du Suédois en Danois échouée</TranslationFromSwedishToDanishFailed>

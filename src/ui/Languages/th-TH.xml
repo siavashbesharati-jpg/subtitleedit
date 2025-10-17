@@ -78,11 +78,11 @@
 
 ซอร์สโค้ดภาษา C# มีให้ดาวน์โหลดได้ที่  https://github.com/SubtitleEdit/subtitleedit
 
-โปรดเข้าชม www.nikse.dk หากต้องการซอฟต์แวร์รุ่นล่าสุด
+โปรดเข้าชม www.iranexpedia หากต้องการซอฟต์แวร์รุ่นล่าสุด
 
 ยินดีรับฟังทุกคำแนะนำ
 
-อีเมล์: mailto:nikse.dk@gmail.com</AboutText1>
+อีเมล์: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>เพิ่มในรายชื่อเฉพาะ/อื่นๆ</Title>
@@ -938,7 +938,7 @@
         <Title>แปลอัตโนมัติ</Title>
         <TranslatePoweredByGoogle>แปลภาษา (โดยกูเกิ้ล)...</TranslatePoweredByGoogle>
         <TranslatePoweredByMicrosoft>แปลภาษา (โดยไมโครซอฟต์)...</TranslatePoweredByMicrosoft>
-        <TranslateFromSwedishToDanish>แปลภาษาจากสวีเดนเป็นเดนมาร์ก (โดย nikse.dk)...</TranslateFromSwedishToDanish>
+        <TranslateFromSwedishToDanish>แปลภาษาจากสวีเดนเป็นเดนมาร์ก (โดย iranexpedia)...</TranslateFromSwedishToDanish>
       </AutoTranslate>
       <Options>
         <Title>ตัวเลือก</Title>
@@ -1172,7 +1172,7 @@
     <SubtitleTranslated>แปลซับไตเติ้ลแล้ว</SubtitleTranslated>
     <TranslateSwedishToDanish>แปลซับไตเติ้ลภาษาสวีเดนที่โหลดแล้วเป็นเดนมาร์ก</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>แปลซับไตเติ้ลสวีเดนที่โหลดอยู่ (แน่ใจหรือว่าเป็นสวีเดน) เป็นเดนมาร์กหรือไม่</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>กำลังแปลผ่าน www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>กำลังแปลผ่าน www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>ก่อนแปลสวีเดนเป็นเดนมาร์ก</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>แปลจากสวีเดนเป็นเดนมาร์กเสร็จแล้ว</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>แปลจากสวีเดนเป็นเดนมาร์กผิดพลาด</TranslationFromSwedishToDanishFailed>

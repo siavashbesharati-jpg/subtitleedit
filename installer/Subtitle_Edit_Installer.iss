@@ -80,10 +80,10 @@ AppVerName={#app_name} {#app_ver}
 AppCopyright={#app_copyright} {#app_copyright_start} {#app_copyright_end}
 AppPublisher={#app_copyright}
 
-AppContact=https://www.nikse.dk/SubtitleEdit/Help
-AppPublisherURL=https://www.nikse.dk/SubtitleEdit/
-AppSupportURL=https://www.nikse.dk/SubtitleEdit/
-AppUpdatesURL=https://www.nikse.dk/SubtitleEdit/
+AppContact=https://www.iranexpedia/SubtitleEdit/Help
+AppPublisherURL=https://www.iranexpedia/SubtitleEdit/
+AppSupportURL=https://www.iranexpedia/SubtitleEdit/
+AppUpdatesURL=https://www.iranexpedia/SubtitleEdit/
 
 VersionInfoVersion={#app_ver_full}
 VersionInfoDescription={#app_name} installer
@@ -348,8 +348,8 @@ Source: ..\Tesseract302\msvcr90.dll;                 DestDir: {app}\Tesseract302
 [Icons]
 Name: {group}\Subtitle Edit;                Filename: {app}\SubtitleEdit.exe; WorkingDir: {app}; Comment: Subtitle Edit {#app_ver}; AppUserModelID: Nikse.SubtitleEdit; IconFilename: {app}\SubtitleEdit.exe; IconIndex: 0
 Name: {group}\Help and Support\Changelog;   Filename: {app}\Changelog.txt;    WorkingDir: {app}; Comment: {cm:sm_com_Changelog}
-Name: {group}\Help and Support\Online Help; Filename: https://www.nikse.dk/SubtitleEdit/Help
-Name: {group}\Help and Support\{cm:ProgramOnTheWeb,Subtitle Edit}; Filename: https://www.nikse.dk/SubtitleEdit/; Comment: {cm:ProgramOnTheWeb,Subtitle Edit}
+Name: {group}\Help and Support\Online Help; Filename: https://www.iranexpedia/SubtitleEdit/Help
+Name: {group}\Help and Support\{cm:ProgramOnTheWeb,Subtitle Edit}; Filename: https://www.iranexpedia/SubtitleEdit/; Comment: {cm:ProgramOnTheWeb,Subtitle Edit}
 Name: {group}\{cm:UninstallProgram,Subtitle Edit};                 Filename: {uninstallexe};                     Comment: {cm:UninstallProgram,Subtitle Edit}; WorkingDir: {app}; IconFilename: {app}\Icons\uninstall.ico
 
 Name: {commondesktop}\Subtitle Edit;        Filename: {app}\SubtitleEdit.exe; WorkingDir: {app}; Comment: Subtitle Edit {#app_ver}; AppUserModelID: Nikse.SubtitleEdit; IconFilename: {app}\SubtitleEdit.exe; IconIndex: 0; Tasks: desktopicon\common
@@ -483,7 +483,7 @@ Type: dirifempty; Name: {app}\Languages;                Check: not IsComponentSe
 Filename: {win}\Microsoft.NET\Framework\v4.0.30319\ngen.exe;   Parameters: "install ""{app}\SubtitleEdit.exe"""; StatusMsg: {cm:msg_OptimizingPerformance}; Flags: runhidden runascurrentuser skipifdoesntexist; Check: not IsWin64
 Filename: {win}\Microsoft.NET\Framework64\v4.0.30319\ngen.exe; Parameters: "install ""{app}\SubtitleEdit.exe"""; StatusMsg: {cm:msg_OptimizingPerformance}; Flags: runhidden runascurrentuser skipifdoesntexist; Check: IsWin64
 Filename: {app}\SubtitleEdit.exe;             Description: {cm:LaunchProgram,Subtitle Edit}; WorkingDir: {app}; Flags: nowait postinstall skipifsilent unchecked
-Filename: https://www.nikse.dk/SubtitleEdit/; Description: {cm:run_VisitWebsite};                               Flags: nowait postinstall skipifsilent unchecked shellexec
+Filename: https://www.iranexpedia/SubtitleEdit/; Description: {cm:run_VisitWebsite};                               Flags: nowait postinstall skipifsilent unchecked shellexec
 
 
 [UninstallRun]

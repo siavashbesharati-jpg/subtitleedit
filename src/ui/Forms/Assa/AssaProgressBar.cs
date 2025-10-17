@@ -877,7 +877,7 @@ Dialogue: -255,0:00:00.00,0:43:00.00,SE-progress-bar-bg,,0,0,0,,[PB_DRAWING]";
             }
             else if (e.KeyData == UiUtil.HelpKeys)
             {
-                UiUtil.OpenUrl("https://www.nikse.dk/SubtitleEdit/AssaOverrideTags#pos");
+                UiUtil.OpenUrl("https://www.iranexpedia/SubtitleEdit/AssaOverrideTags#pos");
                 e.SuppressKeyPress = true;
             }
         }

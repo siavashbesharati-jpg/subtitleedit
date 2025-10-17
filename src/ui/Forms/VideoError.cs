@@ -54,7 +54,7 @@ namespace Nikse.SubtitleEdit.Forms
             {
                 sb.AppendLine();
                 sb.AppendLine("Try installing latest version of libmpv or libvlc!");
-                sb.Append("Read more about Subtitle Edit on Linux here: https://nikse.dk/SubtitleEdit/Help#linux");
+                sb.Append("Read more about Subtitle Edit on Linux here: https://iranexpedia/SubtitleEdit/Help#linux");
             }
             else if (currentVideoPlayer == "MPV" && Configuration.IsRunningOnWindows)
             {

@@ -84,11 +84,11 @@ Gellout a rit dasparzhañ anezhañ, kemm anezhañ hag ober gantañ en un doare f
 
 Kod-mammenn ar meziant C# a zo hegerz war GitHub : https://github.com/SubtitleEdit/subtitleedit
 
-Kit da weladenniñ www.nikse.dk evit kaout ar stumm diwezhañ.
+Kit da weladenniñ www.iranexpedia evit kaout ar stumm diwezhañ.
 
 Ouzhpenn mat e vez degemeret ar c'hinnigoù.
 
-Postel: mailto:nikse.dk@gmail.com</AboutText1>
+Postel: mailto:iranexpedia@gmail.com</AboutText1>
   </About>
   <AddToNames>
     <Title>Ouzhpennañ d'al listenn anvioù/hag-all hag-all.</Title>
@@ -992,7 +992,7 @@ Notenn: Gwiriekit spas an disk vak.</WaveFileMalformed>
         <Title>Troidigezh</Title>
         <TranslatePoweredByGoogle>Treiñ (gant Google)...</TranslatePoweredByGoogle>
         <TranslatePoweredByMicrosoft>Treiñ (gant Microsoft)...</TranslatePoweredByMicrosoft>
-        <TranslateFromSwedishToDanish>Treiñ eus ar Swedeg an Daneg (gant nikse.dk)</TranslateFromSwedishToDanish>
+        <TranslateFromSwedishToDanish>Treiñ eus ar Swedeg an Daneg (gant iranexpedia)</TranslateFromSwedishToDanish>
       </AutoTranslate>
       <Options>
         <Title>&amp;Dibarzhioù</Title>
@@ -1232,7 +1232,7 @@ Kenderc'hel ?</SubtitleAppendPrompt>
     <SubtitleTranslated>Istitl troet</SubtitleTranslated>
     <TranslateSwedishToDanish>Treiñ an istitl eus ar Swedeg karget evit bremañ en Daneg</TranslateSwedishToDanish>
     <TranslateSwedishToDanishWarning>Treiñ an istitloù eus ar Swedeg karget bremañ (Ha Swedeg eo da vat ?) en Daneg ?</TranslateSwedishToDanishWarning>
-    <TranslatingViaNikseDkMt>Troidigezh gant www.nikse.dk/mt...</TranslatingViaNikseDkMt>
+    <TranslatingViaNikseDkMt>Troidigezh gant www.iranexpedia/mt...</TranslatingViaNikseDkMt>
     <BeforeSwedishToDanishTranslation>A-raok treiñ eus ar Swedeg en Daneg</BeforeSwedishToDanishTranslation>
     <TranslationFromSwedishToDanishComplete>Troidigezh eus ar Swedeg en Daneg echuet</TranslationFromSwedishToDanishComplete>
     <TranslationFromSwedishToDanishFailed>Troidigezh eus ar Swedeg en Daneg c'hwitet</TranslationFromSwedishToDanishFailed>
