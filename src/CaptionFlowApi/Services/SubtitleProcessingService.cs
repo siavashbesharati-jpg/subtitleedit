@@ -16,6 +16,8 @@ public class SubtitleProcessingService
     private readonly string _outputDirectory;
     private readonly ILogger<SubtitleProcessingService> _logger;
 
+    private readonly HttpClient _httpClient;
+
     public SubtitleProcessingService(ILogger<SubtitleProcessingService> logger, IConfiguration configuration)
     {
         _logger = logger;
@@ -24,6 +26,11 @@ public class SubtitleProcessingService
 
         Directory.CreateDirectory(_uploadDirectory);
         Directory.CreateDirectory(_outputDirectory);
+
+        // Initialize HttpClient for URL downloads
+        _httpClient = new HttpClient();
+        _httpClient.Timeout = TimeSpan.FromMinutes(30); // 30 minutes for large file downloads
+        _httpClient.DefaultRequestHeaders.Add("User-Agent", "CaptionFlow-API/1.0");
     }
 
     /// <summary>
@@ -214,6 +221,108 @@ public class SubtitleProcessingService
         {
             _logger.LogError(ex, "Error extracting subtitles from video");
             throw;
+        }
+    }
+
+    /// <summary>
+    /// Creates a new subtitle extraction job from a video URL
+    /// </summary>
+    public async Task<SubtitleJob> CreateJobFromUrlAsync(string videoUrl, SubtitleExtractionRequest request)
+    {
+        var jobId = Guid.NewGuid().ToString();
+        var fileName = GetFileNameFromUrl(videoUrl);
+        var videoFileName = $"{jobId}_{fileName}";
+        var videoFilePath = Path.Combine(_uploadDirectory, videoFileName);
+
+        var job = new SubtitleJob
+        {
+            JobId = jobId,
+            FileName = fileName,
+            VideoFilePath = videoFilePath,
+            Status = "Downloading",
+            CreatedAt = DateTime.UtcNow
+        };
+
+        _jobs[jobId] = job;
+
+        // Start downloading and processing in background
+        _ = Task.Run(async () => await DownloadAndProcessJobAsync(jobId, videoUrl, videoFilePath, request));
+
+        return job;
+    }
+
+    /// <summary>
+    /// Downloads video from URL and processes it
+    /// </summary>
+    private async Task DownloadAndProcessJobAsync(string jobId, string videoUrl, string videoFilePath, SubtitleExtractionRequest request)
+    {
+        var job = _jobs[jobId];
+
+        try
+        {
+            // Download video file
+            _logger.LogInformation("Downloading video from URL for job {JobId}: {Url}", jobId, videoUrl);
+            
+            using (var response = await _httpClient.GetAsync(videoUrl, HttpCompletionOption.ResponseHeadersRead))
+            {
+                response.EnsureSuccessStatusCode();
+
+                var totalBytes = response.Content.Headers.ContentLength ?? 0;
+                _logger.LogInformation("Downloading {TotalMB} MB for job {JobId}", totalBytes / 1024 / 1024, jobId);
+
+                using (var contentStream = await response.Content.ReadAsStreamAsync())
+                using (var fileStream = new FileStream(videoFilePath, FileMode.Create, FileAccess.Write, FileShare.None, 8192, true))
+                {
+                    var buffer = new byte[8192];
+                    long totalRead = 0;
+                    int bytesRead;
+
+                    while ((bytesRead = await contentStream.ReadAsync(buffer, 0, buffer.Length)) > 0)
+                    {
+                        await fileStream.WriteAsync(buffer, 0, bytesRead);
+                        totalRead += bytesRead;
+
+                        // Log progress every 10MB
+                        if (totalRead % (10 * 1024 * 1024) == 0)
+                        {
+                            var progress = totalBytes > 0 ? (totalRead * 100 / totalBytes) : 0;
+                            _logger.LogInformation("Download progress for job {JobId}: {Progress}%", jobId, progress);
+                        }
+                    }
+                }
+            }
+
+            _logger.LogInformation("Download completed for job {JobId}, starting subtitle extraction", jobId);
+
+            // Now process the downloaded file - synchronous subtitle extraction is CPU-bound
+            job.Status = "Processing";
+#pragma warning disable CS1998
+            await ProcessJobAsync(jobId, request);
+#pragma warning restore CS1998
+        }
+        catch (Exception ex)
+        {
+            job.Status = "Failed";
+            job.ErrorMessage = $"Failed to download or process video: {ex.Message}";
+            job.CompletedAt = DateTime.UtcNow;
+            _logger.LogError(ex, "Job {JobId} failed during download/processing", jobId);
+        }
+    }
+
+    /// <summary>
+    /// Extract filename from URL
+    /// </summary>
+    private string GetFileNameFromUrl(string url)
+    {
+        try
+        {
+            var uri = new Uri(url);
+            var filename = Path.GetFileName(uri.LocalPath);
+            return string.IsNullOrEmpty(filename) ? "video.mp4" : filename;
+        }
+        catch
+        {
+            return "video.mp4";
         }
     }
 
