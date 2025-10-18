@@ -1,6 +1,7 @@
 using CaptionFlowApi.Models;
 using CaptionFlowApi.Services;
 using Microsoft.AspNetCore.Mvc;
+using Nikse.SubtitleEdit.Core.AudioToText;
 
 namespace CaptionFlowApi.Controllers;
 
@@ -345,7 +346,8 @@ public class TranscriptionController : ControllerBase
     [ProducesResponseType(typeof(object), 200)]
     public IActionResult GetModels([FromQuery] string engine = "whisper-cpp")
     {
-        var whisperModels = new[]
+        // Get available models (all possible)
+        var allWhisperModels = new[]
         {
             new
             {
@@ -354,7 +356,8 @@ public class TranscriptionController : ControllerBase
                 speed = "~32x realtime",
                 quality = "Fair",
                 description = "Fastest, lowest quality. Good for testing.",
-                recommended = false
+                recommended = false,
+                downloaded = false
             },
             new
             {
@@ -363,7 +366,8 @@ public class TranscriptionController : ControllerBase
                 speed = "~16x realtime",
                 quality = "Good",
                 description = "Fast and decent quality. Recommended for most use cases.",
-                recommended = true
+                recommended = true,
+                downloaded = false
             },
             new
             {
@@ -372,7 +376,8 @@ public class TranscriptionController : ControllerBase
                 speed = "~6x realtime",
                 quality = "Very Good",
                 description = "Balanced speed and quality.",
-                recommended = false
+                recommended = false,
+                downloaded = false
             },
             new
             {
@@ -381,7 +386,8 @@ public class TranscriptionController : ControllerBase
                 speed = "~2x realtime",
                 quality = "Excellent",
                 description = "High quality for professional use.",
-                recommended = false
+                recommended = false,
+                downloaded = false
             },
             new
             {
@@ -390,16 +396,48 @@ public class TranscriptionController : ControllerBase
                 speed = "~1x realtime",
                 quality = "Best",
                 description = "Highest quality, slowest. Use only when quality is critical.",
-                recommended = false
+                recommended = false,
+                downloaded = false
             }
         };
+        
+        // Check which models are actually downloaded
+        var whisperModel = WhisperHelper.GetWhisperModel();
+        var downloadedModels = new List<string>();
+        
+        if (Directory.Exists(whisperModel.ModelFolder))
+        {
+            var modelFiles = Directory.GetFiles(whisperModel.ModelFolder, "*.bin");
+            downloadedModels = modelFiles
+                .Select(f => Path.GetFileNameWithoutExtension(f))
+                .Where(n => !n.EndsWith("$$$")) // Exclude incomplete downloads
+                .ToList();
+        }
+        
+        // Mark downloaded models
+        var modelsWithStatus = allWhisperModels.Select(m => new
+        {
+            m.name,
+            m.size,
+            m.speed,
+            m.quality,
+            m.description,
+            recommended = downloadedModels.Contains(m.name) ? m.recommended : false,
+            downloaded = downloadedModels.Contains(m.name) || 
+                         downloadedModels.Contains(m.name + ".en") ||
+                         downloadedModels.Any(d => d.StartsWith(m.name + "-"))
+        }).ToList();
 
         return Ok(new
         {
             engine,
-            models = whisperModels,
+            models = modelsWithStatus,
+            downloaded = downloadedModels,
+            modelFolder = whisperModel.ModelFolder,
             development = true,
-            note = "Speed estimates are approximate and depend on CPU/GPU. 'base' model is recommended for most use cases."
+            note = downloadedModels.Any() 
+                ? $"You have {downloadedModels.Count} model(s) downloaded. Only downloaded models can be used."
+                : "No models downloaded yet. Download from: https://huggingface.co/ggerganov/whisper.cpp/tree/main"
         });
     }
 

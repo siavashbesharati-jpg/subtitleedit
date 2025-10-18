@@ -282,6 +282,35 @@ public class TranscriptionService
         }
 
         _logger.LogInformation($"Using Whisper at: {whisperPath}");
+        
+        // Find the model file (try different variations)
+        var whisperModel = WhisperHelper.GetWhisperModel();
+        var modelPath = FindWhisperModelFile(whisperModel.ModelFolder, model);
+        
+        if (modelPath == null)
+        {
+            var availableModels = new List<string>();
+            if (Directory.Exists(whisperModel.ModelFolder))
+            {
+                var modelFiles = Directory.GetFiles(whisperModel.ModelFolder, "*.bin")
+                    .Where(f => !f.EndsWith(".$$$")); // Exclude incomplete downloads
+                availableModels = modelFiles
+                    .Select(f => Path.GetFileNameWithoutExtension(f))
+                    .ToList();
+            }
+            
+            var availableList = availableModels.Any() 
+                ? $"Available models: {string.Join(", ", availableModels)}" 
+                : "No models downloaded yet.";
+            
+            throw new Exception(
+                $"Model '{model}' not found.\n\n" +
+                $"{availableList}\n\n" +
+                $"Download models from: https://huggingface.co/ggerganov/whisper.cpp/tree/main\n" +
+                $"Save to: {whisperModel.ModelFolder}");
+        }
+        
+        _logger.LogInformation($"Using model: {modelPath}");
 
         // Normalize language code
         if (language.Equals("auto", StringComparison.OrdinalIgnoreCase))
@@ -302,7 +331,8 @@ public class TranscriptionService
             ? "" 
             : $" --language {language}";
 
-        var args = $"--model {model}{languageArg} --output-srt{translateArg} --print-progress \"{wavFile}\"";
+        // Use the full path to the model file (not just the model name)
+        var args = $"--model \"{modelPath}\"{languageArg} --output-srt{translateArg} --print-progress \"{wavFile}\"";
 
         _logger.LogInformation($"Whisper command: {whisperPath} {args}");
 
@@ -521,5 +551,53 @@ public class TranscriptionService
                 _logger.LogWarning(ex, $"Failed to cleanup job: {job.JobId}");
             }
         }
+    }
+
+    /// <summary>
+    /// Find Whisper model file with fallback logic
+    /// Tries: model.bin, model.en.bin, model-q5_0.bin, model-q5_1.bin
+    /// </summary>
+    private string? FindWhisperModelFile(string modelFolder, string modelName)
+    {
+        if (!Directory.Exists(modelFolder))
+        {
+            return null;
+        }
+
+        // Try different model file variations
+        var variations = new[]
+        {
+            $"{modelName}.bin",              // tiny.bin
+            $"{modelName}.en.bin",           // tiny.en.bin (English-only)
+            $"{modelName}-q5_0.bin",         // tiny-q5_0.bin (quantized)
+            $"{modelName}-q5_1.bin",         // tiny-q5_1.bin (quantized)
+            $"{modelName}.en-q5_0.bin",      // tiny.en-q5_0.bin
+            $"{modelName}.en-q5_1.bin",      // tiny.en-q5_1.bin
+        };
+
+        foreach (var variation in variations)
+        {
+            var fullPath = Path.Combine(modelFolder, variation);
+            if (File.Exists(fullPath))
+            {
+                _logger.LogInformation($"Found model variant: {variation}");
+                return fullPath;
+            }
+        }
+
+        // Try wildcards for other variations
+        var pattern = $"{modelName}*.bin";
+        var matchingFiles = Directory.GetFiles(modelFolder, pattern)
+            .Where(f => !f.EndsWith(".$$$")) // Exclude incomplete downloads
+            .OrderBy(f => f.Length) // Prefer shorter names (less suffix)
+            .FirstOrDefault();
+
+        if (matchingFiles != null)
+        {
+            _logger.LogInformation($"Found model match: {Path.GetFileName(matchingFiles)}");
+            return matchingFiles;
+        }
+
+        return null;
     }
 }

@@ -328,6 +328,10 @@
                     <li><strong>Audio:</strong> MP3, WAV, M4A, AAC, FLAC</li>
                     <li><strong>Max Size:</strong> 2 GB</li>
                 </ul>
+                <div style="margin-top: 15px; padding: 10px; background: white; border-radius: 5px;">
+                    <strong>API Status:</strong> <span id="apiStatus" style="color: #ff9800;">Checking...</span>
+                    <button onclick="checkApiHealth()" style="margin-left: 10px; padding: 5px 15px; background: #2196f3; color: white; border: none; border-radius: 5px; cursor: pointer;">🔄 Test Connection</button>
+                </div>
             </div>
             
             <div class="upload-section" id="uploadSection">
@@ -355,12 +359,13 @@
                 <div class="setting-group">
                     <label for="model">🎯 Model</label>
                     <select id="model">
-                        <option value="tiny">Tiny (Fast, Fair Quality)</option>
-                        <option value="base" selected>Base (Recommended)</option>
-                        <option value="small">Small (Slower, Better)</option>
-                        <option value="medium">Medium (High Quality)</option>
-                        <option value="large">Large (Best, Slowest)</option>
+                        <option value="tiny" selected>Tiny (Fast, Fair Quality) ✓</option>
+                        <option value="base">Base (Not Downloaded)</option>
+                        <option value="small">Small (Not Downloaded)</option>
+                        <option value="medium">Medium (High Quality) ✓</option>
+                        <option value="large">Large (Not Downloaded)</option>
                     </select>
+                    <small style="color: #666;">✓ = Downloaded and ready</small>
                 </div>
                 
                 <div class="setting-group">
@@ -428,9 +433,12 @@
     </div>
     
     <script>
-        const API_BASE = 'http://localhost:5000/api/transcription';
+        // Auto-detect API base URL (same origin as this page)
+        const API_BASE = `${window.location.protocol}//${window.location.host}/api/transcription`;
         let currentJobId = null;
         let pollInterval = null;
+        
+        console.log('API Base URL:', API_BASE);
         
         const uploadSection = document.getElementById('uploadSection');
         const fileInput = document.getElementById('fileInput');
@@ -439,6 +447,39 @@
         const progressSection = document.getElementById('progressSection');
         const resultSection = document.getElementById('resultSection');
         const errorSection = document.getElementById('errorSection');
+        
+        // Check API health on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            checkApiHealth();
+        });
+        
+        async function checkApiHealth() {
+            const statusEl = document.getElementById('apiStatus');
+            try {
+                statusEl.textContent = 'Checking...';
+                statusEl.style.color = '#ff9800';
+                
+                const response = await fetch(`${API_BASE}/health`);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                
+                const health = await response.json();
+                console.log('API Health:', health);
+                
+                if (health.whisper && health.whisper.ready) {
+                    statusEl.textContent = '✅ Connected (Whisper Ready)';
+                    statusEl.style.color = '#4caf50';
+                } else {
+                    statusEl.textContent = '⚠️ Connected (Whisper Not Ready)';
+                    statusEl.style.color = '#ff9800';
+                }
+            } catch (error) {
+                console.error('Health check failed:', error);
+                statusEl.textContent = `❌ Failed: ${error.message}`;
+                statusEl.style.color = '#f44336';
+            }
+        }
         
         // File input change
         fileInput.addEventListener('change', (e) => {
@@ -495,17 +536,29 @@
             
             try {
                 // Upload file
+                console.log('Uploading to:', `${API_BASE}/transcribe`);
                 const response = await fetch(`${API_BASE}/transcribe`, {
                     method: 'POST',
                     body: formData
                 });
                 
+                console.log('Response status:', response.status);
+                
                 if (!response.ok) {
-                    const error = await response.json();
-                    throw new Error(error.error || 'Upload failed');
+                    let errorMsg = `Server error: ${response.status} ${response.statusText}`;
+                    try {
+                        const error = await response.json();
+                        errorMsg = error.error || error.message || errorMsg;
+                    } catch (e) {
+                        const text = await response.text();
+                        console.error('Error response:', text);
+                        errorMsg = text || errorMsg;
+                    }
+                    throw new Error(errorMsg);
                 }
                 
                 const result = await response.json();
+                console.log('Upload result:', result);
                 currentJobId = result.jobId;
                 
                 // Show progress section
@@ -516,7 +569,8 @@
                 startPolling();
                 
             } catch (error) {
-                showError(error.message);
+                console.error('Upload error:', error);
+                showError(`Failed to upload: ${error.message}`);
                 uploadBtn.disabled = false;
                 uploadBtn.textContent = '🚀 Start Transcription';
             }
