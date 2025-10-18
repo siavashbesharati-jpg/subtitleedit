@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcription Test - CaptionFlow API</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .upload-section {
+            background: #f8f9fa;
+            border: 3px dashed #667eea;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+        
+        .upload-section:hover {
+            border-color: #764ba2;
+            background: #f0f1ff;
+        }
+        
+        .upload-section.dragover {
+            border-color: #764ba2;
+            background: #e8ebff;
+            transform: scale(1.02);
+        }
+        
+        .file-input-wrapper {
+            position: relative;
+            display: inline-block;
+            margin: 20px 0;
+        }
+        
+        input[type="file"] {
+            display: none;
+        }
+        
+        .file-label {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .file-label:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .selected-file {
+            margin-top: 15px;
+            font-size: 1em;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .settings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .setting-group {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .setting-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .setting-group select,
+        .setting-group input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        
+        .setting-group select:focus,
+        .setting-group input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .progress-section {
+            display: none;
+            margin-top: 30px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .progress-section.active {
+            display: block;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 40px;
+            background: #e0e0e0;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            width: 0%;
+            transition: width 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1em;
+        }
+        
+        .status-text {
+            text-align: center;
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .job-id {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .result-section {
+            display: none;
+            margin-top: 30px;
+            padding: 30px;
+            background: #e8f5e9;
+            border-radius: 10px;
+            border: 2px solid #4caf50;
+        }
+        
+        .result-section.active {
+            display: block;
+        }
+        
+        .result-section h3 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+        }
+        
+        .download-btn {
+            background: #4caf50;
+            margin-bottom: 20px;
+        }
+        
+        .download-btn:hover {
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.6);
+        }
+        
+        .transcript {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-height: 300px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        .error-section {
+            display: none;
+            margin-top: 30px;
+            padding: 30px;
+            background: #ffebee;
+            border-radius: 10px;
+            border: 2px solid #f44336;
+        }
+        
+        .error-section.active {
+            display: block;
+        }
+        
+        .error-section h3 {
+            color: #c62828;
+            margin-bottom: 15px;
+        }
+        
+        .error-message {
+            color: #d32f2f;
+            font-weight: 500;
+        }
+        
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .info-box h4 {
+            color: #1565c0;
+            margin-bottom: 8px;
+        }
+        
+        .info-box ul {
+            margin-left: 20px;
+            color: #333;
+        }
+        
+        .info-box li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎤 Speech-to-Text Transcription</h1>
+            <p>Upload video/audio and generate subtitles using AI</p>
+        </div>
+        
+        <div class="content">
+            <div class="info-box">
+                <h4>📋 Supported Formats</h4>
+                <ul>
+                    <li><strong>Video:</strong> MP4, MKV, AVI, MOV, WebM</li>
+                    <li><strong>Audio:</strong> MP3, WAV, M4A, AAC, FLAC</li>
+                    <li><strong>Max Size:</strong> 2 GB</li>
+                </ul>
+            </div>
+            
+            <div class="upload-section" id="uploadSection">
+                <div class="file-input-wrapper">
+                    <input type="file" id="fileInput" accept="video/*,audio/*" />
+                    <label for="fileInput" class="file-label">
+                        📁 Choose File
+                    </label>
+                </div>
+                <div class="selected-file" id="selectedFile">No file selected</div>
+                <p style="margin-top: 20px; color: #666;">or drag and drop a file here</p>
+            </div>
+            
+            <div class="settings">
+                <div class="setting-group">
+                    <label for="engine">🚀 Engine</label>
+                    <select id="engine">
+                        <option value="whisper-cpp" selected>Whisper C++ (Recommended)</option>
+                        <option value="faster-whisper">Faster Whisper</option>
+                        <option value="whisper-python">Whisper Python</option>
+                        <option value="vosk">Vosk (Offline)</option>
+                    </select>
+                </div>
+                
+                <div class="setting-group">
+                    <label for="model">🎯 Model</label>
+                    <select id="model">
+                        <option value="tiny">Tiny (Fast, Fair Quality)</option>
+                        <option value="base" selected>Base (Recommended)</option>
+                        <option value="small">Small (Slower, Better)</option>
+                        <option value="medium">Medium (High Quality)</option>
+                        <option value="large">Large (Best, Slowest)</option>
+                    </select>
+                </div>
+                
+                <div class="setting-group">
+                    <label for="language">🌍 Language</label>
+                    <select id="language">
+                        <option value="auto" selected>Auto Detect</option>
+                        <option value="english">English</option>
+                        <option value="spanish">Spanish</option>
+                        <option value="french">French</option>
+                        <option value="german">German</option>
+                        <option value="italian">Italian</option>
+                        <option value="portuguese">Portuguese</option>
+                        <option value="russian">Russian</option>
+                        <option value="japanese">Japanese</option>
+                        <option value="chinese">Chinese</option>
+                        <option value="korean">Korean</option>
+                        <option value="arabic">Arabic</option>
+                        <option value="hindi">Hindi</option>
+                    </select>
+                </div>
+                
+                <div class="setting-group">
+                    <label for="audioTrack">🎵 Audio Track</label>
+                    <input type="number" id="audioTrack" value="0" min="0" max="10" />
+                    <small style="color: #666;">0 = first track</small>
+                </div>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="postProcess" checked />
+                <label for="postProcess">✨ Enable post-processing (improve timing & punctuation)</label>
+            </div>
+            
+            <div class="checkbox-group" style="margin-bottom: 30px;">
+                <input type="checkbox" id="translate" />
+                <label for="translate">🌐 Translate to English</label>
+            </div>
+            
+            <button class="btn" id="uploadBtn" onclick="uploadFile()" disabled>
+                🚀 Start Transcription
+            </button>
+            
+            <div class="progress-section" id="progressSection">
+                <div class="status-text" id="statusText">Initializing...</div>
+                <div class="job-id" id="jobId"></div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill">0%</div>
+                </div>
+            </div>
+            
+            <div class="result-section" id="resultSection">
+                <h3>✅ Transcription Complete!</h3>
+                <button class="btn download-btn" id="downloadBtn">
+                    💾 Download Subtitle File (.srt)
+                </button>
+                <h4 style="margin-bottom: 10px;">Preview:</h4>
+                <div class="transcript" id="transcript"></div>
+            </div>
+            
+            <div class="error-section" id="errorSection">
+                <h3>❌ Error</h3>
+                <div class="error-message" id="errorMessage"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const API_BASE = 'http://localhost:5000/api/transcription';
+        let currentJobId = null;
+        let pollInterval = null;
+        
+        const uploadSection = document.getElementById('uploadSection');
+        const fileInput = document.getElementById('fileInput');
+        const selectedFile = document.getElementById('selectedFile');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const progressSection = document.getElementById('progressSection');
+        const resultSection = document.getElementById('resultSection');
+        const errorSection = document.getElementById('errorSection');
+        
+        // File input change
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                selectedFile.textContent = `📄 ${file.name} (${formatFileSize(file.size)})`;
+                uploadBtn.disabled = false;
+            }
+        });
+        
+        // Drag and drop
+        uploadSection.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadSection.classList.add('dragover');
+        });
+        
+        uploadSection.addEventListener('dragleave', () => {
+            uploadSection.classList.remove('dragover');
+        });
+        
+        uploadSection.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadSection.classList.remove('dragover');
+            
+            const file = e.dataTransfer.files[0];
+            if (file) {
+                fileInput.files = e.dataTransfer.files;
+                selectedFile.textContent = `📄 ${file.name} (${formatFileSize(file.size)})`;
+                uploadBtn.disabled = false;
+            }
+        });
+        
+        async function uploadFile() {
+            const file = fileInput.files[0];
+            if (!file) return;
+            
+            // Reset UI
+            progressSection.classList.remove('active');
+            resultSection.classList.remove('active');
+            errorSection.classList.remove('active');
+            
+            // Prepare form data
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('engine', document.getElementById('engine').value);
+            formData.append('model', document.getElementById('model').value);
+            formData.append('language', document.getElementById('language').value);
+            formData.append('usePostProcessing', document.getElementById('postProcess').checked);
+            formData.append('translateToEnglish', document.getElementById('translate').checked);
+            formData.append('audioTrackNumber', document.getElementById('audioTrack').value);
+            
+            uploadBtn.disabled = true;
+            uploadBtn.textContent = '⏳ Uploading...';
+            
+            try {
+                // Upload file
+                const response = await fetch(`${API_BASE}/transcribe`, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'Upload failed');
+                }
+                
+                const result = await response.json();
+                currentJobId = result.jobId;
+                
+                // Show progress section
+                progressSection.classList.add('active');
+                document.getElementById('jobId').textContent = `Job ID: ${currentJobId}`;
+                
+                // Start polling
+                startPolling();
+                
+            } catch (error) {
+                showError(error.message);
+                uploadBtn.disabled = false;
+                uploadBtn.textContent = '🚀 Start Transcription';
+            }
+        }
+        
+        function startPolling() {
+            pollInterval = setInterval(async () => {
+                try {
+                    const response = await fetch(`${API_BASE}/status/${currentJobId}`);
+                    const status = await response.json();
+                    
+                    updateProgress(status);
+                    
+                    if (status.status === 'Completed') {
+                        clearInterval(pollInterval);
+                        showResult();
+                    } else if (status.status === 'Failed') {
+                        clearInterval(pollInterval);
+                        showError(status.error || 'Transcription failed');
+                    }
+                } catch (error) {
+                    clearInterval(pollInterval);
+                    showError('Failed to check status: ' + error.message);
+                }
+            }, 1000); // Poll every second
+        }
+        
+        function updateProgress(status) {
+            const statusText = document.getElementById('statusText');
+            const progressFill = document.getElementById('progressFill');
+            
+            statusText.textContent = status.statusDescription || status.status;
+            progressFill.style.width = status.progress + '%';
+            progressFill.textContent = status.progress + '%';
+        }
+        
+        async function showResult() {
+            progressSection.classList.remove('active');
+            resultSection.classList.add('active');
+            
+            // Get full result
+            try {
+                const response = await fetch(`${API_BASE}/result/${currentJobId}`);
+                const result = await response.json();
+                
+                document.getElementById('transcript').textContent = result.transcript || 'No transcript available';
+                
+                // Setup download button
+                document.getElementById('downloadBtn').onclick = () => {
+                    window.open(`${API_BASE}/download/${currentJobId}`, '_blank');
+                };
+                
+            } catch (error) {
+                console.error('Failed to load result:', error);
+            }
+            
+            // Reset upload button
+            uploadBtn.disabled = false;
+            uploadBtn.textContent = '🚀 Start Transcription';
+            fileInput.value = '';
+            selectedFile.textContent = 'No file selected';
+        }
+        
+        function showError(message) {
+            progressSection.classList.remove('active');
+            errorSection.classList.add('active');
+            document.getElementById('errorMessage').textContent = message;
+            
+            uploadBtn.disabled = false;
+            uploadBtn.textContent = '🚀 Start Transcription';
+        }
+        
+        function formatFileSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(2) + ' KB';
+            if (bytes < 1024 * 1024 * 1024) return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+            return (bytes / (1024 * 1024 * 1024)).toFixed(2) + ' GB';
+        }
+    </script>
+</body>
+</html>

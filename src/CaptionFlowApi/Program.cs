@@ -59,6 +59,7 @@ builder.Services.AddSwaggerGen(options =>
 
 // Register services
 builder.Services.AddSingleton<SubtitleProcessingService>();
+builder.Services.AddSingleton<TranscriptionService>();
 
 // Add CORS for web clients
 builder.Services.AddCors(options =>
@@ -85,6 +86,7 @@ app.UseSwaggerUI(options =>
 
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
+app.UseStaticFiles(); // Enable serving static files from wwwroot
 app.UseAuthorization();
 app.MapControllers();
 
