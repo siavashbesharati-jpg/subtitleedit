@@ -8,7 +8,8 @@ public class TranscriptionJob
     public string JobId { get; set; } = string.Empty;
     public string FileName { get; set; } = string.Empty;
     public string FilePath { get; set; } = string.Empty;
-    public string Status { get; set; } = "Queued"; // Queued, Extracting Audio, Transcribing, Post-Processing, Completed, Failed
+    public string Status { get; set; } = "Queued"; // Queued, Extracting Audio, Transcribing, Post-Processing, Translating, Completed, Failed
+    public string StatusDescription { get; set; } = "Waiting to start..."; // Detailed description of current status
     public int Progress { get; set; } = 0; // 0-100
     public string Engine { get; set; } = string.Empty;
     public string Model { get; set; } = string.Empty;

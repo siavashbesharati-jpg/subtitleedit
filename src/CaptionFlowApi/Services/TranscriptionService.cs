@@ -129,13 +129,43 @@ public class TranscriptionService
 
             job.Progress = 90;
 
-            // Step 4: Save as SRT
+            // Step 4: Translation (if requested)
+            if (!string.IsNullOrWhiteSpace(request.TranslateTo) && 
+                request.TranslateTo.ToLowerInvariant() != "none")
+            {
+                job.Status = "Translating";
+                job.StatusDescription = $"Translating to {request.TranslateTo}...";
+                _logger.LogInformation($"Translating subtitle to: {request.TranslateTo}");
+
+                var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
+                var translationLogger = loggerFactory.CreateLogger<Services.TranslationService>();
+                var translationService = new Services.TranslationService(translationLogger);
+
+                // Detect source language or use the transcription language
+                var sourceLanguage = request.Language.ToLowerInvariant();
+                if (sourceLanguage == "auto" && subtitle.Paragraphs.Any())
+                {
+                    sourceLanguage = translationService.DetectLanguage(
+                        string.Join(" ", subtitle.Paragraphs.Take(5).Select(p => p.Text)));
+                }
+
+                subtitle = await translationService.TranslateSubtitle(
+                    subtitle,
+                    sourceLanguage,
+                    request.TranslateTo,
+                    CancellationToken.None);
+
+                job.Progress = 95;
+                _logger.LogInformation($"Translation complete");
+            }
+
+            // Step 5: Save as SRT
             var srtPath = Path.Combine(_outputDirectory, $"{jobId}.srt");
             var srtFormat = new SubRip();
             var srtContent = srtFormat.ToText(subtitle, string.Empty);
             await File.WriteAllTextAsync(srtPath, srtContent, Encoding.UTF8);
 
-            // Step 5: Complete
+            // Step 6: Complete
             job.Status = "Completed";
             job.Progress = 100;
             job.OutputPath = srtPath;

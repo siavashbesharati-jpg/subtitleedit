@@ -26,6 +26,12 @@ public class TranscriptionRequest
     public bool TranslateToEnglish { get; set; } = false;
 
     /// <summary>
+    /// Translate subtitle to this language code (empty = no translation)
+    /// Examples: en, es, fr, de, ar, zh-CN, etc.
+    /// </summary>
+    public string TranslateTo { get; set; } = "";
+
+    /// <summary>
     /// Apply post-processing (timing fixes, punctuation, casing)
     /// </summary>
     public bool UsePostProcessing { get; set; } = true;

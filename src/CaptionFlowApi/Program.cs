@@ -60,6 +60,7 @@ builder.Services.AddSwaggerGen(options =>
 // Register services
 builder.Services.AddSingleton<SubtitleProcessingService>();
 builder.Services.AddSingleton<TranscriptionService>();
+builder.Services.AddSingleton<TranslationService>();
 
 // Add CORS for web clients
 builder.Services.AddCors(options =>

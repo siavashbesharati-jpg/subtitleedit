@@ -14,13 +14,16 @@ namespace CaptionFlowApi.Controllers;
 public class TranscriptionController : ControllerBase
 {
     private readonly TranscriptionService _transcriptionService;
+    private readonly TranslationService _translationService;
     private readonly ILogger<TranscriptionController> _logger;
 
     public TranscriptionController(
         TranscriptionService transcriptionService,
+        TranslationService translationService,
         ILogger<TranscriptionController> logger)
     {
         _transcriptionService = transcriptionService;
+        _translationService = translationService;
         _logger = logger;
     }
 
@@ -513,6 +516,30 @@ public class TranscriptionController : ControllerBase
             },
             development = true,
             warning = !whisperInstalled ? "Whisper is not installed. Please install Whisper to use transcription features." : null
+        });
+    }
+
+    /// <summary>
+    /// Get supported translation languages (Google Translate V1 - Free, no API key required)
+    /// </summary>
+    /// <returns>List of supported languages for translation</returns>
+    [HttpGet("languages")]
+    [ProducesResponseType(typeof(object), 200)]
+    public IActionResult GetLanguages()
+    {
+        var languages = _translationService.GetSupportedLanguages();
+
+        return Ok(new
+        {
+            count = languages.Count,
+            languages = languages.Select(l => new
+            {
+                name = l.Name,
+                code = l.Code
+            }),
+            translator = "Google Translate V1 (Free)",
+            note = "Use the 'code' value for translateTo parameter. Example: 'en' for English, 'es' for Spanish, 'ar' for Arabic",
+            development = true
         });
     }
 }
