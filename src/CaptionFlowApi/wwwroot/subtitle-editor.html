@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subtitle Editor - CaptionFlow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+            color: white;
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+            color: white;
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+            color: white;
+        }
+
+        .editor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .editor-panel {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .panel-header.translated {
+            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+        }
+
+        .subtitle-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .subtitle-table thead {
+            background: #f5f5f5;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .subtitle-table th {
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: 600;
+            color: #333;
+            border-bottom: 2px solid #ddd;
+            font-size: 0.9em;
+        }
+
+        .subtitle-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+
+        .subtitle-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .subtitle-table tr.selected {
+            background: #e3f2fd;
+        }
+
+        .num-cell {
+            width: 50px;
+            text-align: center;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .time-cell {
+            width: 200px;
+        }
+
+        .time-input {
+            width: 95px;
+            padding: 6px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .time-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+        }
+
+        .text-cell {
+            min-width: 200px;
+        }
+
+        .text-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.95em;
+            min-height: 60px;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .text-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+        }
+
+        .actions-cell {
+            width: 100px;
+            text-align: center;
+        }
+
+        .btn-small {
+            padding: 5px 10px;
+            font-size: 0.85em;
+            margin: 2px;
+        }
+
+        .table-container {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .info-bar {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #666;
+        }
+
+        .info-value {
+            color: #333;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            background: #ffebee;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #c62828;
+            margin-bottom: 20px;
+        }
+
+        .success-message {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #2e7d32;
+            margin-bottom: 20px;
+        }
+
+        .single-panel {
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 1200px) {
+            .editor-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Subtitle Editor</h1>
+            <p class="subtitle">Edit your subtitles with precision</p>
+        </header>
+
+        <div id="loadingSection" class="loading">
+            <div class="spinner"></div>
+            <p>Loading subtitles...</p>
+        </div>
+
+        <div id="errorSection" style="display: none;" class="error-message"></div>
+        <div id="successSection" style="display: none;" class="success-message"></div>
+
+        <div id="editorSection" style="display: none;">
+            <div class="info-bar">
+                <div class="info-item">
+                    <span class="info-label">📄 Job ID:</span>
+                    <span class="info-value" id="jobIdDisplay"></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">🎬 Total Segments:</span>
+                    <span class="info-value" id="segmentCount">0</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">✏️ Modified:</span>
+                    <span class="info-value" id="modifiedCount">0</span>
+                </div>
+            </div>
+
+            <div class="toolbar">
+                <button class="btn btn-success" id="saveBtn" onclick="saveChanges()">
+                    💾 Save All Changes
+                </button>
+                <button class="btn btn-primary" id="addRowBtn" onclick="addNewRow()">
+                    ➕ Add Subtitle
+                </button>
+                <button class="btn btn-warning" id="resetBtn" onclick="resetChanges()">
+                    🔄 Reset All
+                </button>
+                <button class="btn btn-danger" id="closeBtn" onclick="closeEditor()">
+                    ❌ Close
+                </button>
+            </div>
+
+            <div class="editor-grid" id="editorGrid">
+                <!-- Original panel -->
+                <div class="editor-panel" id="originalPanel">
+                    <div class="panel-header">
+                        📄 Original Subtitle
+                    </div>
+                    <div class="table-container">
+                        <table class="subtitle-table">
+                            <thead>
+                                <tr>
+                                    <th class="num-cell">#</th>
+                                    <th class="time-cell">⏰ Timecode</th>
+                                    <th class="text-cell">📝 Text</th>
+                                    <th class="actions-cell">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="originalTableBody">
+                                <!-- Rows will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Translated panel (hidden if no translation) -->
+                <div class="editor-panel" id="translatedPanel" style="display: none;">
+                    <div class="panel-header translated">
+                        🌐 Translated Subtitle
+                    </div>
+                    <div class="table-container">
+                        <table class="subtitle-table">
+                            <thead>
+                                <tr>
+                                    <th class="num-cell">#</th>
+                                    <th class="time-cell">⏰ Timecode</th>
+                                    <th class="text-cell">📝 Text</th>
+                                    <th class="actions-cell">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="translatedTableBody">
+                                <!-- Rows will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Use the same protocol and host as the current page to avoid CORS issues
+        const API_BASE = `${window.location.protocol}//${window.location.host}/api/transcription`;
+        let jobId = '';
+        let originalSubtitles = [];
+        let translatedSubtitles = [];
+        let modifiedOriginal = new Set();
+        let modifiedTranslated = new Set();
+
+        // Get job ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        jobId = urlParams.get('jobId');
+
+        // Load subtitles when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            if (!jobId) {
+                showError('No job ID provided. Please use the link from the transcription page.');
+                document.getElementById('loadingSection').style.display = 'none';
+                return;
+            }
+
+            document.getElementById('jobIdDisplay').textContent = jobId;
+            loadSubtitles();
+        });
+
+        async function loadSubtitles() {
+            try {
+                // Get job details
+                const response = await fetch(`${API_BASE}/result/${jobId}`);
+                if (!response.ok) {
+                    throw new Error(`Failed to load job: ${response.status}`);
+                }
+
+                const result = await response.json();
+                
+                // Load original subtitle
+                const originalResponse = await fetch(`${API_BASE}/download/${jobId}/original`);
+                if (originalResponse.ok) {
+                    const originalSrt = await originalResponse.text();
+                    originalSubtitles = parseSRT(originalSrt);
+                }
+
+                // Try to load translated subtitle
+                const translatedResponse = await fetch(`${API_BASE}/download/${jobId}/translated`);
+                if (translatedResponse.ok) {
+                    const translatedSrt = await translatedResponse.text();
+                    translatedSubtitles = parseSRT(translatedSrt);
+                }
+
+                renderEditor();
+
+            } catch (error) {
+                console.error('Error loading subtitles:', error);
+                showError('Failed to load subtitles: ' + error.message);
+            } finally {
+                document.getElementById('loadingSection').style.display = 'none';
+            }
+        }
+
+        function parseSRT(srtContent) {
+            console.log('Parsing SRT content, length:', srtContent.length);
+            const subtitles = [];
+            
+            // Split by double newline (standard SRT format)
+            const blocks = srtContent.trim().split(/\n\s*\n/);
+            console.log('Found blocks:', blocks.length);
+
+            blocks.forEach((block, idx) => {
+                const lines = block.trim().split('\n');
+                
+                // Debug first block
+                if (idx === 0) {
+                    console.log('First block lines:', lines);
+                }
+                
+                if (lines.length >= 3) {
+                    const number = parseInt(lines[0]);
+                    const timecode = lines[1];
+                    const text = lines.slice(2).join('\n');
+
+                    // Check if timecode has the arrow
+                    if (timecode && timecode.includes('-->')) {
+                        const [start, end] = timecode.split('-->');
+                        
+                        subtitles.push({
+                            number: number || idx + 1,
+                            start: start.trim(),
+                            end: end.trim(),
+                            text: text.trim()
+                        });
+                    } else {
+                        console.warn('Invalid timecode format in block', idx, ':', timecode);
+                    }
+                } else {
+                    console.warn('Block', idx, 'has insufficient lines:', lines.length);
+                }
+            });
+
+            console.log('Parsed subtitles:', subtitles.length);
+            if (subtitles.length > 0) {
+                console.log('First subtitle:', subtitles[0]);
+            }
+            
+            return subtitles;
+        }
+
+        function renderEditor() {
+            console.log('Rendering editor...');
+            console.log('Original subtitles:', originalSubtitles.length);
+            console.log('Translated subtitles:', translatedSubtitles.length);
+            
+            const originalTableBody = document.getElementById('originalTableBody');
+            const translatedTableBody = document.getElementById('translatedTableBody');
+            const translatedPanel = document.getElementById('translatedPanel');
+            const originalPanel = document.getElementById('originalPanel');
+
+            // Clear existing content
+            originalTableBody.innerHTML = '';
+            translatedTableBody.innerHTML = '';
+
+            // Render original subtitles
+            if (originalSubtitles.length === 0) {
+                console.error('No original subtitles to render!');
+                showError('No subtitles found. The SRT file may be empty or in an invalid format.');
+                return;
+            }
+            
+            originalSubtitles.forEach((sub, index) => {
+                const row = createSubtitleRow(sub, index, 'original');
+                originalTableBody.appendChild(row);
+            });
+            
+            console.log('Rendered original rows:', originalTableBody.children.length);
+
+            // Render translated subtitles if available
+            if (translatedSubtitles.length > 0) {
+                translatedPanel.style.display = 'block';
+                translatedSubtitles.forEach((sub, index) => {
+                    const row = createSubtitleRow(sub, index, 'translated');
+                    translatedTableBody.appendChild(row);
+                });
+                console.log('Rendered translated rows:', translatedTableBody.children.length);
+            } else {
+                translatedPanel.style.display = 'none';
+                originalPanel.classList.add('single-panel');
+            }
+
+            // Update segment count
+            document.getElementById('segmentCount').textContent = originalSubtitles.length;
+
+            // Show editor
+            document.getElementById('editorSection').style.display = 'block';
+            console.log('Editor rendered successfully');
+        }
+
+        function createSubtitleRow(subtitle, index, type) {
+            const tr = document.createElement('tr');
+            tr.dataset.index = index;
+            tr.dataset.type = type;
+
+            tr.innerHTML = `
+                <td class="num-cell">${subtitle.number}</td>
+                <td class="time-cell">
+                    <div style="margin-bottom: 3px; font-size: 0.75em; color: #666;">Start:</div>
+                    <input type="text" 
+                           class="time-input" 
+                           value="${subtitle.start}" 
+                           data-field="start"
+                           placeholder="00:00:00,000"
+                           onchange="markModified(${index}, '${type}')">
+                    <div style="margin: 8px 0 3px 0; font-size: 0.75em; color: #666;">End:</div>
+                    <input type="text" 
+                           class="time-input" 
+                           value="${subtitle.end}" 
+                           data-field="end"
+                           placeholder="00:00:00,000"
+                           onchange="markModified(${index}, '${type}')">
+                </td>
+                <td class="text-cell">
+                    <textarea class="text-input" 
+                              data-field="text"
+                              placeholder="Enter subtitle text..."
+                              onchange="markModified(${index}, '${type}')">${subtitle.text}</textarea>
+                </td>
+                <td class="actions-cell">
+                    <button class="btn btn-danger btn-small" onclick="deleteRow(${index}, '${type}')">
+                        🗑️
+                    </button>
+                </td>
+            `;
+
+            return tr;
+        }
+
+        function markModified(index, type) {
+            if (type === 'original') {
+                modifiedOriginal.add(index);
+            } else {
+                modifiedTranslated.add(index);
+            }
+            updateModifiedCount();
+            
+            // Update the data
+            const row = document.querySelector(`tr[data-index="${index}"][data-type="${type}"]`);
+            const subtitle = type === 'original' ? originalSubtitles[index] : translatedSubtitles[index];
+            
+            subtitle.start = row.querySelector('input[data-field="start"]').value;
+            subtitle.end = row.querySelector('input[data-field="end"]').value;
+            subtitle.text = row.querySelector('textarea[data-field="text"]').value;
+        }
+
+        function updateModifiedCount() {
+            const total = modifiedOriginal.size + modifiedTranslated.size;
+            document.getElementById('modifiedCount').textContent = total;
+        }
+
+        function deleteRow(index, type) {
+            if (!confirm('Are you sure you want to delete this subtitle?')) {
+                return;
+            }
+
+            if (type === 'original') {
+                originalSubtitles.splice(index, 1);
+            } else {
+                translatedSubtitles.splice(index, 1);
+            }
+
+            // Renumber
+            renumberSubtitles(type === 'original' ? originalSubtitles : translatedSubtitles);
+            renderEditor();
+        }
+
+        function addNewRow() {
+            const lastSub = originalSubtitles[originalSubtitles.length - 1];
+            const newSub = {
+                number: originalSubtitles.length + 1,
+                start: lastSub ? lastSub.end : '00:00:00,000',
+                end: '00:00:00,000',
+                text: ''
+            };
+
+            originalSubtitles.push(newSub);
+            
+            if (translatedSubtitles.length > 0) {
+                translatedSubtitles.push({ ...newSub });
+            }
+
+            renderEditor();
+        }
+
+        function renumberSubtitles(subtitles) {
+            subtitles.forEach((sub, index) => {
+                sub.number = index + 1;
+            });
+        }
+
+        function generateSRT(subtitles) {
+            return subtitles.map(sub => {
+                return `${sub.number}\n${sub.start} --> ${sub.end}\n${sub.text}`;
+            }).join('\n\n');
+        }
+
+        async function saveChanges() {
+            const saveBtn = document.getElementById('saveBtn');
+            saveBtn.disabled = true;
+            saveBtn.textContent = '💾 Saving...';
+
+            try {
+                // Save original
+                if (modifiedOriginal.size > 0 || originalSubtitles.length !== parseSRT(await (await fetch(`${API_BASE}/download/${jobId}/original`)).text()).length) {
+                    const originalSrt = generateSRT(originalSubtitles);
+                    await saveSubtitleFile(originalSrt, 'original');
+                }
+
+                // Save translated
+                if (translatedSubtitles.length > 0 && (modifiedTranslated.size > 0 || translatedSubtitles.length !== parseSRT(await (await fetch(`${API_BASE}/download/${jobId}/translated`)).text()).length)) {
+                    const translatedSrt = generateSRT(translatedSubtitles);
+                    await saveSubtitleFile(translatedSrt, 'translated');
+                }
+
+                modifiedOriginal.clear();
+                modifiedTranslated.clear();
+                updateModifiedCount();
+
+                showSuccess('✅ All changes saved successfully!');
+
+            } catch (error) {
+                console.error('Error saving:', error);
+                showError('Failed to save changes: ' + error.message);
+            } finally {
+                saveBtn.disabled = false;
+                saveBtn.textContent = '💾 Save All Changes';
+            }
+        }
+
+        async function saveSubtitleFile(content, type) {
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${jobId}_${type}_edited.srt`;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+
+        function resetChanges() {
+            if (!confirm('Are you sure you want to reset all changes? This will reload the original subtitles.')) {
+                return;
+            }
+
+            modifiedOriginal.clear();
+            modifiedTranslated.clear();
+            updateModifiedCount();
+            loadSubtitles();
+        }
+
+        function closeEditor() {
+            if (modifiedOriginal.size > 0 || modifiedTranslated.size > 0) {
+                if (!confirm('You have unsaved changes. Are you sure you want to close?')) {
+                    return;
+                }
+            }
+            window.close();
+        }
+
+        function showError(message) {
+            const errorSection = document.getElementById('errorSection');
+            errorSection.textContent = '❌ ' + message;
+            errorSection.style.display = 'block';
+            setTimeout(() => {
+                errorSection.style.display = 'none';
+            }, 5000);
+        }
+
+        function showSuccess(message) {
+            const successSection = document.getElementById('successSection');
+            successSection.textContent = message;
+            successSection.style.display = 'block';
+            setTimeout(() => {
+                successSection.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

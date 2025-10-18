@@ -439,10 +439,16 @@
                 
                 <div id="downloadButtons" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
                     <button class="btn download-btn" id="downloadOriginalBtn" style="flex: 1; min-width: 200px;">
-                        � Download Original
+                        📄 Download Original
                     </button>
                     <button class="btn download-btn" id="downloadTranslatedBtn" style="flex: 1; min-width: 200px; display: none; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
                         🌐 Download Translation
+                    </button>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <button class="btn" id="editBtn" onclick="openEditor()" style="width: 100%; padding: 15px; font-size: 1.1em; background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">
+                        ✏️ Edit Subtitles
                     </button>
                 </div>
                 
@@ -698,6 +704,17 @@
             uploadBtn.textContent = '🚀 Start Transcription';
             fileInput.value = '';
             selectedFile.textContent = 'No file selected';
+        }
+        
+        function openEditor() {
+            if (!currentJobId) {
+                alert('No job ID available');
+                return;
+            }
+            
+            // Open editor in new window
+            const editorUrl = `/subtitle-editor.html?jobId=${currentJobId}`;
+            window.open(editorUrl, '_blank', 'width=1600,height=900');
         }
         
         function showError(message) {
