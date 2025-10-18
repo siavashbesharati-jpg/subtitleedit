@@ -1,0 +1,6 @@
+@CaptionFlowApi_HostAddress = http://localhost:5211
+
+GET {{CaptionFlowApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
