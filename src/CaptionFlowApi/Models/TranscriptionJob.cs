@@ -14,7 +14,9 @@ public class TranscriptionJob
     public string Engine { get; set; } = string.Empty;
     public string Model { get; set; } = string.Empty;
     public string Language { get; set; } = string.Empty;
-    public string OutputPath { get; set; } = string.Empty;
+    public string OutputPath { get; set; } = string.Empty; // Main output (original or translated)
+    public string? OriginalOutputPath { get; set; } // Path to original subtitle
+    public string? TranslatedOutputPath { get; set; } // Path to translated subtitle (if translation was requested)
     public string? Error { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime? CompletedAt { get; set; }

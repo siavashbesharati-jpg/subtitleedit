@@ -4,6 +4,7 @@ using Nikse.SubtitleEdit.Core.Common;
 using Nikse.SubtitleEdit.Core.SubtitleFormats;
 using System.Collections.Concurrent;
 using System.Diagnostics;
+using System.IO.Compression;
 using System.Text;
 
 namespace CaptionFlowApi.Services;
@@ -129,13 +130,25 @@ public class TranscriptionService
 
             job.Progress = 90;
 
-            // Step 4: Translation (if requested)
+            // Step 4: Save original subtitle first (before translation)
+            var srtFormat = new SubRip();
+            var originalSrtPath = Path.Combine(_outputDirectory, $"{jobId}_original.srt");
+            var originalSrtContent = srtFormat.ToText(subtitle, string.Empty);
+            await File.WriteAllTextAsync(originalSrtPath, originalSrtContent, Encoding.UTF8);
+            _logger.LogInformation($"Original subtitle saved: {originalSrtPath}");
+
+            // Step 5: Translation (if requested)
+            Subtitle? translatedSubtitle = null;
+            string? translatedSrtPath = null;
+            
             if (!string.IsNullOrWhiteSpace(request.TranslateTo) && 
                 request.TranslateTo.ToLowerInvariant() != "none")
             {
                 job.Status = "Translating";
                 job.StatusDescription = $"Translating to {request.TranslateTo}...";
-                _logger.LogInformation($"Translating subtitle to: {request.TranslateTo}");
+                _logger.LogInformation($"=== TRANSLATION STARTED ===");
+                _logger.LogInformation($"Target language: {request.TranslateTo}");
+                _logger.LogInformation($"Subtitle paragraphs before translation: {subtitle.Paragraphs.Count}");
 
                 var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
                 var translationLogger = loggerFactory.CreateLogger<Services.TranslationService>();
@@ -147,34 +160,76 @@ public class TranscriptionService
                 {
                     sourceLanguage = translationService.DetectLanguage(
                         string.Join(" ", subtitle.Paragraphs.Take(5).Select(p => p.Text)));
+                    _logger.LogInformation($"Detected source language: {sourceLanguage}");
                 }
 
-                subtitle = await translationService.TranslateSubtitle(
+                _logger.LogInformation($"Translating from '{sourceLanguage}' to '{request.TranslateTo}'");
+
+                translatedSubtitle = await translationService.TranslateSubtitle(
                     subtitle,
                     sourceLanguage,
                     request.TranslateTo,
                     CancellationToken.None);
 
-                job.Progress = 95;
-                _logger.LogInformation($"Translation complete");
+                // Save translated subtitle
+                translatedSrtPath = Path.Combine(_outputDirectory, $"{jobId}_translated_{request.TranslateTo}.srt");
+                var translatedSrtContent = srtFormat.ToText(translatedSubtitle, string.Empty);
+                await File.WriteAllTextAsync(translatedSrtPath, translatedSrtContent, Encoding.UTF8);
+
+                job.Progress = 92;
+                _logger.LogInformation($"=== TRANSLATION COMPLETE ===");
+                _logger.LogInformation($"Translated subtitle saved: {translatedSrtPath}");
+                _logger.LogInformation($"Subtitle paragraphs after translation: {translatedSubtitle.Paragraphs.Count}");
+                if (translatedSubtitle.Paragraphs.Any())
+                {
+                    _logger.LogInformation($"First translated line: {translatedSubtitle.Paragraphs[0].Text}");
+                }
+            }
+            else
+            {
+                _logger.LogInformation($"Translation skipped. TranslateTo = '{request.TranslateTo}'");
             }
 
-            // Step 5: Save as SRT
-            var srtPath = Path.Combine(_outputDirectory, $"{jobId}.srt");
-            var srtFormat = new SubRip();
-            var srtContent = srtFormat.ToText(subtitle, string.Empty);
-            await File.WriteAllTextAsync(srtPath, srtContent, Encoding.UTF8);
+            // Step 6: Set output paths
+            job.Status = "Completing";
+            job.StatusDescription = "Finalizing...";
+            
+            // Store both paths in the job
+            job.OriginalOutputPath = originalSrtPath;
+            job.TranslatedOutputPath = translatedSrtPath;
+            
+            // Set main OutputPath (prefer translated if available)
+            string finalOutputPath = translatedSrtPath ?? originalSrtPath;
+            string displayText;
+            string srtContentForResult;
+            
+            _logger.LogInformation($"=== OUTPUT PATHS ===");
+            _logger.LogInformation($"Original: {originalSrtPath}");
+            _logger.LogInformation($"Translated: {translatedSrtPath ?? "None"}");
+            
+            if (translatedSubtitle != null && translatedSrtPath != null)
+            {
+                displayText = string.Join(" ", translatedSubtitle.Paragraphs.Select(p => p.Text));
+                srtContentForResult = File.ReadAllText(translatedSrtPath, Encoding.UTF8);
+                _logger.LogInformation($"✅ Both original and translated files available");
+            }
+            else
+            {
+                displayText = string.Join(" ", subtitle.Paragraphs.Select(p => p.Text));
+                srtContentForResult = File.ReadAllText(originalSrtPath, Encoding.UTF8);
+                _logger.LogInformation($"ℹ️ Only original file available");
+            }
 
-            // Step 6: Complete
+            // Step 7: Complete
             job.Status = "Completed";
             job.Progress = 100;
-            job.OutputPath = srtPath;
+            job.OutputPath = finalOutputPath;
             job.CompletedAt = DateTime.UtcNow;
             job.Result = new TranscriptionResult
             {
                 JobId = jobId,
-                Text = string.Join(" ", subtitle.Paragraphs.Select(p => p.Text)),
-                SrtContent = srtContent,
+                Text = displayText,
+                SrtContent = srtContentForResult,
                 Duration = subtitle.Paragraphs.LastOrDefault()?.EndTime.TimeSpan ?? TimeSpan.Zero,
                 WordCount = subtitle.Paragraphs.Sum(p => p.Text.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length),
                 SegmentCount = subtitle.Paragraphs.Count,

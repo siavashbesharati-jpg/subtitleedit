@@ -34,7 +34,8 @@ public class TranscriptionController : ControllerBase
     /// <param name="engine">Speech recognition engine (whisper-cpp, whisper-python, etc.)</param>
     /// <param name="model">Model size (tiny, base, small, medium, large)</param>
     /// <param name="language">Language code (auto, en, es, fr, etc.)</param>
-    /// <param name="translateToEnglish">Translate to English</param>
+    /// <param name="translateTo">Target language code for translation (fa, ar, es, etc. or empty/none for no translation)</param>
+    /// <param name="translateToEnglish">Legacy: Translate to English (deprecated, use translateTo instead)</param>
     /// <param name="usePostProcessing">Apply post-processing for better quality</param>
     /// <param name="audioTrackNumber">Audio track number (0 for default)</param>
     /// <returns>Transcription job details</returns>
@@ -47,6 +48,7 @@ public class TranscriptionController : ControllerBase
         [FromForm] string engine = "whisper-cpp",
         [FromForm] string model = "base",
         [FromForm] string language = "auto",
+        [FromForm] string translateTo = "",
         [FromForm] bool translateToEnglish = false,
         [FromForm] bool usePostProcessing = true,
         [FromForm] int audioTrackNumber = 0)
@@ -61,13 +63,14 @@ public class TranscriptionController : ControllerBase
             });
         }
 
-        _logger.LogInformation($"Received transcription request: {file.FileName}, engine: {engine}, model: {model}");
+        _logger.LogInformation($"Received transcription request: {file.FileName}, engine: {engine}, model: {model}, translateTo: '{translateTo}'");
 
         var request = new TranscriptionRequest
         {
             Engine = engine,
             Model = model,
             Language = language,
+            TranslateTo = translateTo,
             TranslateToEnglish = translateToEnglish,
             UsePostProcessing = usePostProcessing,
             AudioTrackNumber = audioTrackNumber
@@ -205,9 +208,96 @@ public class TranscriptionController : ControllerBase
         }
 
         var fileBytes = System.IO.File.ReadAllBytes(job.OutputPath);
-        var fileName = Path.GetFileNameWithoutExtension(job.FileName) + ".srt";
+        var fileExtension = Path.GetExtension(job.OutputPath).ToLowerInvariant();
+        
+        // Determine content type and filename based on file type
+        string contentType;
+        string fileName;
+        
+        if (fileExtension == ".zip")
+        {
+            contentType = "application/zip";
+            fileName = Path.GetFileNameWithoutExtension(job.FileName) + "_subtitles.zip";
+            _logger.LogInformation($"Downloading ZIP package for job: {jobId}, size: {fileBytes.Length} bytes");
+        }
+        else
+        {
+            contentType = "application/x-subrip";
+            fileName = Path.GetFileNameWithoutExtension(job.FileName) + ".srt";
+            _logger.LogInformation($"Downloading SRT file for job: {jobId}, size: {fileBytes.Length} bytes");
+        }
 
-        _logger.LogInformation($"Downloading SRT file for job: {jobId}, size: {fileBytes.Length} bytes");
+        return File(fileBytes, contentType, fileName);
+    }
+
+    /// <summary>
+    /// Download original transcription as SRT file
+    /// </summary>
+    /// <param name="jobId">Job ID</param>
+    /// <returns>Original SRT file</returns>
+    [HttpGet("download/{jobId}/original")]
+    [ProducesResponseType(typeof(FileResult), 200)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(404)]
+    public IActionResult DownloadOriginal(string jobId)
+    {
+        var job = _transcriptionService.GetJob(jobId);
+
+        if (job == null)
+        {
+            return NotFound(new { error = "Job not found", jobId });
+        }
+
+        if (job.Status != "Completed")
+        {
+            return BadRequest(new { error = $"Job not completed. Current status: {job.Status}" });
+        }
+
+        if (string.IsNullOrEmpty(job.OriginalOutputPath) || !System.IO.File.Exists(job.OriginalOutputPath))
+        {
+            return NotFound(new { error = "Original file not found", jobId });
+        }
+
+        var fileBytes = System.IO.File.ReadAllBytes(job.OriginalOutputPath);
+        var fileName = Path.GetFileNameWithoutExtension(job.FileName) + "_original.srt";
+
+        _logger.LogInformation($"Downloading original SRT for job: {jobId}, size: {fileBytes.Length} bytes");
+
+        return File(fileBytes, "application/x-subrip", fileName);
+    }
+
+    /// <summary>
+    /// Download translated transcription as SRT file
+    /// </summary>
+    /// <param name="jobId">Job ID</param>
+    /// <returns>Translated SRT file</returns>
+    [HttpGet("download/{jobId}/translated")]
+    [ProducesResponseType(typeof(FileResult), 200)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(404)]
+    public IActionResult DownloadTranslated(string jobId)
+    {
+        var job = _transcriptionService.GetJob(jobId);
+
+        if (job == null)
+        {
+            return NotFound(new { error = "Job not found", jobId });
+        }
+
+        if (job.Status != "Completed")
+        {
+            return BadRequest(new { error = $"Job not completed. Current status: {job.Status}" });
+        }
+
+        if (string.IsNullOrEmpty(job.TranslatedOutputPath) || !System.IO.File.Exists(job.TranslatedOutputPath))
+        {
+            return NotFound(new { error = "Translated file not found. Translation may not have been requested.", jobId });
+        }
+
+        var fileBytes = System.IO.File.ReadAllBytes(job.TranslatedOutputPath);
+        var fileName = Path.GetFileNameWithoutExtension(job.FileName) + "_translated.srt";
+
+        _logger.LogInformation($"Downloading translated SRT for job: {jobId}, size: {fileBytes.Length} bytes");
 
         return File(fileBytes, "application/x-subrip", fileName);
     }

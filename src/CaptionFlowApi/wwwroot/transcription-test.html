@@ -397,7 +397,7 @@
             <div class="setting-group" style="margin-bottom: 20px;">
                 <label for="translateTo">🌐 Translate To (Optional)</label>
                 <select id="translateTo">
-                    <option value="">None - Keep Original Language</option>
+                    <option value="none">None - Keep Original Language</option>
                     <option value="fa" selected>🇮🇷 Farsi (Persian)</option>
                     <option value="en">🇬🇧 English</option>
                     <option value="ar">🇸🇦 Arabic</option>
@@ -417,14 +417,9 @@
                 <small style="color: #666;">✨ FREE translation via Google Translate (144 languages available)</small>
             </div>
             
-            <div class="checkbox-group">
+            <div class="checkbox-group" style="margin-bottom: 30px;">
                 <input type="checkbox" id="postProcess" checked />
                 <label for="postProcess">✨ Enable post-processing (improve timing & punctuation)</label>
-            </div>
-            
-            <div class="checkbox-group" style="margin-bottom: 30px;">
-                <input type="checkbox" id="translate" />
-                <label for="translate">🌐 Translate to English (Whisper built-in, overrides above)</label>
             </div>
             
             <button class="btn" id="uploadBtn" onclick="uploadFile()" disabled>
@@ -441,10 +436,18 @@
             
             <div class="result-section" id="resultSection">
                 <h3>✅ Transcription Complete!</h3>
-                <button class="btn download-btn" id="downloadBtn">
-                    💾 Download Subtitle File (.srt)
-                </button>
-                <h4 style="margin-bottom: 10px;">Preview:</h4>
+                
+                <div id="downloadButtons" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+                    <button class="btn download-btn" id="downloadOriginalBtn" style="flex: 1; min-width: 200px;">
+                        � Download Original
+                    </button>
+                    <button class="btn download-btn" id="downloadTranslatedBtn" style="flex: 1; min-width: 200px; display: none; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        🌐 Download Translation
+                    </button>
+                </div>
+                
+                <p id="downloadInfo" style="margin: 10px 0; font-size: 14px; color: #666;"></p>
+                <h4 style="margin-bottom: 10px;">Preview (Translated):</h4>
                 <div class="transcript" id="transcript"></div>
             </div>
             
@@ -473,6 +476,9 @@
         
         // Check API health on page load
         window.addEventListener('DOMContentLoaded', () => {
+            // Set Farsi as default translation language
+            document.getElementById('translateTo').value = 'fa';
+            
             checkApiHealth();
         });
         
@@ -551,9 +557,10 @@
             formData.append('model', document.getElementById('model').value);
             formData.append('language', document.getElementById('language').value);
             formData.append('usePostProcessing', document.getElementById('postProcess').checked);
-            formData.append('translateToEnglish', document.getElementById('translate').checked);
             formData.append('translateTo', document.getElementById('translateTo').value);
             formData.append('audioTrackNumber', document.getElementById('audioTrack').value);
+            
+            console.log('Translation language:', document.getElementById('translateTo').value);
             
             uploadBtn.disabled = true;
             uploadBtn.textContent = '⏳ Uploading...';
@@ -640,15 +647,50 @@
                 const response = await fetch(`${API_BASE}/result/${currentJobId}`);
                 const result = await response.json();
                 
-                document.getElementById('transcript').textContent = result.transcript || 'No transcript available';
+                console.log('Result received:', result);
                 
-                // Setup download button
-                document.getElementById('downloadBtn').onclick = () => {
-                    window.open(`${API_BASE}/download/${currentJobId}`, '_blank');
-                };
+                // Fix: API returns 'text' not 'transcript'
+                const transcriptText = result.text || result.transcript || 'No text available';
+                document.getElementById('transcript').textContent = transcriptText;
+                
+                // Show download buttons based on whether translation was requested
+                const translateTo = document.getElementById('translateTo').value;
+                const downloadInfo = document.getElementById('downloadInfo');
+                const downloadOriginalBtn = document.getElementById('downloadOriginalBtn');
+                const downloadTranslatedBtn = document.getElementById('downloadTranslatedBtn');
+                
+                if (translateTo && translateTo !== 'none') {
+                    const langName = document.querySelector(`#translateTo option[value="${translateTo}"]`).textContent;
+                    downloadInfo.innerHTML = `✅ Both files are ready to download`;
+                    
+                    // Show both buttons
+                    downloadOriginalBtn.style.display = 'block';
+                    downloadTranslatedBtn.style.display = 'block';
+                    downloadTranslatedBtn.textContent = `🌐 Download ${langName}`;
+                    
+                    // Setup download buttons
+                    downloadOriginalBtn.onclick = () => {
+                        window.open(`${API_BASE}/download/${currentJobId}/original`, '_blank');
+                    };
+                    
+                    downloadTranslatedBtn.onclick = () => {
+                        window.open(`${API_BASE}/download/${currentJobId}/translated`, '_blank');
+                    };
+                } else {
+                    downloadInfo.textContent = '📄 Original subtitle file';
+                    
+                    // Show only original button
+                    downloadOriginalBtn.style.display = 'block';
+                    downloadTranslatedBtn.style.display = 'none';
+                    
+                    downloadOriginalBtn.onclick = () => {
+                        window.open(`${API_BASE}/download/${currentJobId}/original`, '_blank');
+                    };
+                }
                 
             } catch (error) {
                 console.error('Failed to load result:', error);
+                document.getElementById('transcript').textContent = 'Error loading transcript';
             }
             
             // Reset upload button
